@@ -2,8 +2,25 @@
   border: none;
 }
 
-.search-bar {
-  width: 30rem;
-  font-size: 12px;
-  font-weight: 300;
+label.search-bar {
+  input {
+    width: 25rem;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 10px 0px 10px;
+
+    &:focus,
+    :active {
+      outline: none;
+    }
+  }
+}
+
+// will figure out later
+label.search-bar::before {
+  content: '';
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  background-image: url('https://commons.wikimedia.org/wiki/File:Search_Icon.svg');
 }

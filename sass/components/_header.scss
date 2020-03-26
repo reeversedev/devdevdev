@@ -8,17 +8,25 @@
     background-color: rgb(67, 67, 146);
     border-radius: 50%;
     position: absolute;
-    left: 145px;
+    left: 147px;
     top: 22px;
     opacity: 0.6;
+  }
+  .cart {
+    margin-right: 5px;
   }
 }
 
 .hello-name {
   display: flex;
   align-items: center;
+
   img {
     border-radius: 50%;
     margin: 0px 10px;
+  }
+
+  .name {
+    margin-left: 5px;
   }
 }
