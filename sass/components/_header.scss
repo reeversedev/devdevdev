@@ -1,0 +1,24 @@
+.header {
+  padding: 0 3rem;
+  .logo::after {
+    content: '';
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    background-color: rgb(67, 67, 146);
+    border-radius: 50%;
+    position: absolute;
+    left: 145px;
+    top: 22px;
+    opacity: 0.6;
+  }
+}
+
+.hello-name {
+  display: flex;
+  align-items: center;
+  img {
+    border-radius: 50%;
+    margin: 0px 10px;
+  }
+}
