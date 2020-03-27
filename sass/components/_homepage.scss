@@ -1,7 +1,30 @@
 .homepage {
   padding: 2rem 3rem;
+  display: flex;
+  flex-direction: row;
 
   h1 {
     font-size: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 10px 0px;
+      font-weight: 200;
+    }
+  }
+
+  .explore {
+    width: 20%;
+    li {
+      span {
+        margin: 0px 10px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
   }
 }

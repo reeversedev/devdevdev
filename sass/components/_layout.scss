@@ -11,6 +11,14 @@
   display: block;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
 // justify-content
 .justify-content-between {
   justify-content: space-between;
