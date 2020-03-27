@@ -27,4 +27,14 @@
       }
     }
   }
+
+  .newin {
+    width: 100%;
+    .category-card {
+      height: 50px;
+      width: 100%;
+      display: grid;
+      background-color: rgb(169, 225, 251);
+    }
+  }
 }
