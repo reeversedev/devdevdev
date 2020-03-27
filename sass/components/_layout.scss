@@ -49,6 +49,33 @@
 .font-weight-700 {
   font-weight: 700;
 }
+.font-weight-800 {
+  font-weight: 800;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-18 {
+  font-size: 18px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.font-size-22 {
+  font-size: 22px;
+}
 
 //padding
 .p-0 {
@@ -73,22 +100,22 @@
 //margin
 
 .m-0 {
-  margin: 0px;
+  margin: 0;
 }
 .m-1 {
-  margin: 0px;
+  margin: 1rem;
 }
 .m-2 {
-  margin: 0px;
+  margin: 2rem;
 }
 .m-3 {
-  margin: 0px;
+  margin: 3rem;
 }
 .m-4 {
-  margin: 0px;
+  margin: 4rem;
 }
 .m-5 {
-  margin: 0px;
+  margin: 5rem;
 }
 
 // width
@@ -103,14 +130,17 @@
 
 .w-30 {
   width: 30%;
+  margin: 0px 10px;
 }
 
 .w-40 {
   width: 40%;
+  margin: 10px 10px;
 }
 
 .w-50 {
   width: 50%;
+  margin: 10px 10px;
 }
 
 .w-60 {
@@ -121,6 +151,40 @@
   width: 70%;
 }
 
+// text
 .text-center {
   text-align: center;
+}
+
+// colored backgrounds
+.cyan-background {
+  background-color: rgb(170, 228, 255);
+}
+
+.purple-background {
+  background-color: rgb(250, 195, 250);
+}
+
+.yellow-background {
+  background-color: rgb(242, 245, 96);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 160px;
+    width: 100%;
+    background-size: contain;
+    background-position: 90%;
+    background-repeat: no-repeat;
+    background-image: url('https://res.cloudinary.com/reeversedev/image/upload/v1585327507/prateek_4_n2opnj.svg');
+  }
+}
+
+.pink-background {
+  background-color: pink;
+}
+
+.position-relative {
+  position: relative;
 }

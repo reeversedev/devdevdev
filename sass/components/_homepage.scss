@@ -30,11 +30,26 @@
 
   .newin {
     width: 100%;
-    .category-card {
-      height: 50px;
+    .category-horizontal-card {
+      height: 160px;
       width: 100%;
       display: grid;
-      background-color: rgb(169, 225, 251);
+      border-radius: 15px;
+    }
+    .category-vertical-card {
+      height: 320px;
+      width: 100%;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-end;
+      font-size: 12px;
+      text-align: center;
+      background-color: whitesmoke;
+
+      p {
+        margin: 0 auto;
+        padding: 30px;
+      }
     }
   }
 }
