@@ -44,12 +44,22 @@
       align-items: flex-end;
       font-size: 12px;
       text-align: center;
-      background-color: whitesmoke;
+      background-color: rgb(226, 224, 224);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 0px -55px;
 
       p {
         margin: 0 auto;
         padding: 30px;
       }
+    }
+
+    .adidas {
+      background-image: url('https://images.asos-media.com/products/adidas-originals-lxcon-94-trainers-in-white/12624921-1-white?$XXL$&wid=513&fit=constrain');
+    }
+    .sneakers {
+      background-image: url('https://images.asos-media.com/products/asos-design-lightweight-super-skinny-joggers-in-light-khaki/13187225-1-mermaid?$XXL$&wid=513&fit=constrain');
     }
   }
 }

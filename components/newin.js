@@ -35,13 +35,13 @@ const Newin = () => {
         <div className="w-50">
           <div className="d-flex">
             <div className="w-50">
-              <div className="category-vertical-card m-1">
+              <div className="category-vertical-card m-1 adidas">
                 <p>Adidas Originals LXCON 94 trainers in white</p>
               </div>
             </div>
             <div className="w-50">
-              <div className="category-vertical-card m-1">
-                <p>Adidas Originals LXCON 94 trainers in white</p>
+              <div className="category-vertical-card m-1 sneakers">
+                <p>Lightweight super skinny joggers in light khaki</p>
               </div>
             </div>
           </div>
