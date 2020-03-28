@@ -5,7 +5,7 @@ const Newin = () => {
   return (
     <div className="newin">
       <div className="d-flex align-items-center">
-        <img src={flash} alt="icon" height="25" /> <h1>New In</h1>
+        <img src={flash} alt="icon" height="35" /> <h1>New In</h1>
       </div>
       <div className="d-flex">
         <div className="w-50">
