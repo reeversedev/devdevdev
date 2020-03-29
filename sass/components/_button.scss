@@ -1,0 +1,86 @@
+button.toolbar-button {
+  border-radius: 10px;
+  padding: 5px 20px;
+  box-shadow: none;
+  height: 50px;
+  width: 120px;
+  border: 0.5px solid gray;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgb(138, 138, 218);
+    color: white;
+  }
+}
+
+button.toolbar-button.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    display: block;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    line-height: 1.8;
+  }
+}
+
+button.toolbar-button.sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &::before {
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-image: url('https://cdn.iconscout.com/icon/free/png-256/sort-1780015-1518405.png');
+    transform: scaleX(-1);
+  }
+}
+
+button.toolbar-button.male {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &::before {
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-image: url('https://cdn.iconscout.com/icon/free/png-256/male-symbol-1438497-1214006.png');
+  }
+
+  &:hover {
+    background-color: rgb(120, 225, 248);
+  }
+}
+
+button.toolbar-button.female {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &::before {
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-image: url('https://cdn.iconscout.com/icon/free/png-256/female-symbol-1438487-1213996.png');
+  }
+
+  &:hover {
+    background-color: rgb(240, 165, 215);
+  }
+}
