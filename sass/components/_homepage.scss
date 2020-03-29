@@ -1,7 +1,10 @@
 .homepage {
-  padding: 2rem 3rem;
+  padding: 0rem 3rem;
   display: flex;
   flex-direction: row;
+  margin: 4rem 0;
+  top: 5%;
+  z-index: 5;
 
   h1 {
     font-size: 2rem;
@@ -18,7 +21,8 @@
   }
 
   .explore {
-    width: 20%;
+    position: fixed;
+    width: 15%;
     li {
       span {
         margin: 0px 10px;
@@ -30,6 +34,23 @@
 
   .newin {
     width: 100%;
+    padding: 0 0 0 calc(100% - 84.5%);
+    transition: all ease-in 0.5s;
+    z-index: 3;
+
+    .sticky-toolbar {
+      position: fixed;
+      width: calc(100% - 20%);
+      background: #fff;
+      z-index: 1;
+      padding: 0 2rem 0 0;
+      box-sizing: border-box;
+    }
+
+    .highlights {
+      padding: 5rem 0;
+    }
+
     .category-horizontal-card {
       height: 160px;
       width: 100%;
@@ -43,6 +64,7 @@
       display: flex;
       align-items: flex-end;
       font-size: 12px;
+      font-weight: 600;
       text-align: center;
       background-color: rgb(226, 224, 224);
       background-repeat: no-repeat;
@@ -60,6 +82,10 @@
     }
     .sneakers {
       background-image: url('https://images.asos-media.com/products/asos-design-lightweight-super-skinny-joggers-in-light-khaki/13187225-1-mermaid?$XXL$&wid=513&fit=constrain');
+    }
+    .scarves {
+      background-position: 0px;
+      background-image: url('https://images.asos-media.com/products/asos-design-blanket-scarf-in-orange-and-black-brushed-check-with-tassels/13427903-1-orange?$XXL$&wid=513&fit=constrain');
     }
   }
 }
