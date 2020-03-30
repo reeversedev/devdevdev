@@ -24,3 +24,19 @@ label.search-bar::before {
   width: 25px;
   background-image: url('https://commons.wikimedia.org/wiki/File:Search_Icon.svg');
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  label.search-bar {
+    input {
+      width: 25rem;
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    label.search-bar {
+      input {
+        width: 15rem;
+      }
+    }
+  }
