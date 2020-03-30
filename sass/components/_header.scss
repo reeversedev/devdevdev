@@ -39,7 +39,7 @@
   }
 
   .profile-menu {
-    display: none;
+    visibility: hidden;
     position: absolute;
     top: 50px;
     right: 45px;
@@ -48,7 +48,8 @@
     box-sizing: border-box;
     border: 0.5px solid gray;
     border-radius: 15px;
-    transition: all ease-in-out 0.5s;
+    transform: translateY(0%);
+    transition: all ease-in-out 0.3s;
 
     ul {
       padding: 0;
@@ -61,10 +62,9 @@
   }
 
   &:hover {
-    transition: all ease-in 0.2s;
-
     .profile-menu {
-      display: block;
+      visibility: visible;
+      transform: translateY(1em);
     }
   }
 }
