@@ -27,6 +27,7 @@
 .hello-name {
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   img {
     border-radius: 50%;
@@ -35,5 +36,34 @@
 
   .name {
     margin-left: 5px;
+  }
+
+  .profile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    background: #fff;
+    width: calc(100% - 87%);
+    box-sizing: border-box;
+    border: 0.5px solid gray;
+    border-radius: 15px;
+
+    ul {
+      padding: 0;
+      list-style: none;
+      li {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &:hover {
+    transition: all ease-in 0.2s;
+
+    .profile-menu {
+      display: block;
+    }
   }
 }
