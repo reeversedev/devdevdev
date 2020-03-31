@@ -3,7 +3,7 @@ button.toolbar-button {
   padding: 5px 20px;
   box-shadow: none;
   height: 50px;
-  width: 120px;
+  width: 60px;
   border: 0.5px solid gray;
   font-weight: 700;
   font-size: 14px;
@@ -23,7 +23,7 @@ button.toolbar-button.filter {
   align-items: center;
   justify-content: space-between;
 
-  span {
+  span.icon {
     display: block;
     height: 25px;
     width: 25px;
@@ -31,6 +31,25 @@ button.toolbar-button.filter {
     background-color: black;
     color: white;
     line-height: 1.8;
+  }
+
+  span.content {
+    width: 0px;
+    opacity: 0;
+  }
+
+  &:hover {
+    width: 120px;
+    transition: all 0.5s ease-in-out;
+
+    span.icon {
+      opacity: 1;
+    }
+
+    span.content {
+      width: auto;
+      opacity: 1;
+    }
   }
 }
 
@@ -47,6 +66,25 @@ button.toolbar-button.sort {
     background-image: url('https://cdn.iconscout.com/icon/free/png-256/sort-1780015-1518405.png');
     transform: scaleX(-1);
   }
+
+  span.content {
+    width: 0px;
+    opacity: 0;
+  }
+
+  &:hover {
+    width: 120px;
+    transition: all 0.5s ease-in-out;
+
+    span.icon {
+      opacity: 1;
+    }
+
+    span.content {
+      width: auto;
+      opacity: 1;
+    }
+  }
 }
 
 button.toolbar-button.male {
@@ -62,8 +100,24 @@ button.toolbar-button.male {
     background-image: url('https://cdn.iconscout.com/icon/free/png-256/male-symbol-1438497-1214006.png');
   }
 
+  span.content {
+    width: 0px;
+    opacity: 0;
+  }
+
   &:hover {
     background-color: rgb(120, 225, 248);
+    width: 120px;
+    transition: all 0.5s ease-in-out;
+
+    span.icon {
+      opacity: 1;
+    }
+
+    span.content {
+      width: auto;
+      opacity: 1;
+    }
   }
 }
 
@@ -72,7 +126,7 @@ button.toolbar-button.female {
   align-items: center;
   justify-content: space-between;
 
-  &::before {
+  span.icon {
     content: '';
     height: 20px;
     width: 20px;
@@ -80,8 +134,24 @@ button.toolbar-button.female {
     background-image: url('https://cdn.iconscout.com/icon/free/png-256/female-symbol-1438487-1213996.png');
   }
 
+  span.content {
+    width: 0px;
+    opacity: 0;
+  }
+
   &:hover {
     background-color: rgb(240, 165, 215);
+    width: 120px;
+    transition: all 0.5s ease-in-out;
+
+    span.icon {
+      opacity: 1;
+    }
+
+    span.content {
+      width: auto;
+      opacity: 1;
+    }
   }
 }
 

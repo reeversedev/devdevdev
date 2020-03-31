@@ -9,14 +9,22 @@ const Newin = () => {
           <img src={flash} alt="icon" height="35" /> <h1>New In</h1>
         </div>
         <div className="d-flex justify-content-between align-items-center">
-          <button className="toolbar-button female">Female</button>
+          <button className="toolbar-button female">
+            <span className="icon"></span>{' '}
+            <span className="content">Female</span>
+          </button>
 
-          <button className="toolbar-button male">Male</button>
+          <button className="toolbar-button male">
+            <span className="icon"></span> <span className="content">Male</span>{' '}
+          </button>
 
-          <button className="toolbar-button sort">Sort</button>
+          <button className="toolbar-button sort">
+            <span className="icon"></span> <span className="content">Sort</span>{' '}
+          </button>
 
           <button className="toolbar-button filter">
-            <span>5</span> Filter
+            <span className="icon">5</span>{' '}
+            <span className="content">Filter</span>
           </button>
         </div>
       </div>
