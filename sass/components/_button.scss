@@ -4,7 +4,7 @@ button.toolbar-button {
   box-shadow: none;
   height: 50px;
   width: 60px;
-  border: 0.5px solid gray;
+  border: 0;
   font-weight: 700;
   font-size: 14px;
   margin: 10px;
@@ -38,7 +38,8 @@ button.toolbar-button.filter {
     opacity: 0;
   }
 
-  &:hover {
+  &:hover,
+  :active {
     width: 120px;
     transition: all 0.5s ease-in-out;
 
