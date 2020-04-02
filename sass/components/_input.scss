@@ -3,6 +3,7 @@
 }
 
 label.search-bar {
+  display: flex;
   input {
     width: 45rem;
     font-size: 14px;
@@ -36,6 +37,15 @@ label.search-bar::before {
   label.search-bar {
     input {
       width: 15rem;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  label.search-bar {
+    width: 100%;
+    input {
+      width: 100%;
     }
   }
 }

@@ -94,10 +94,65 @@
   .homepage h1 {
     font-size: 1.6rem;
   }
+
+  .toolbar {
+    transform: translateY(5px);
+  }
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
+  .homepage {
+    padding: 0rem 2rem;
+  }
   .homepage h1 {
     font-size: 1.6rem;
+  }
+  .homepage .newin {
+    width: 100%;
+    padding: 0 0 0 calc(100% - 80.5%);
+    transition: all ease-in 0.5s;
+    z-index: 3;
+    .sticky-toolbar {
+      padding: 0 2rem 0 0;
+    }
+  }
+  .toolbar {
+    transform: translateY(5px);
+  }
+}
+
+// For all mobile screens
+@media screen and (max-width: 425px) {
+  .homepage {
+    padding: 0 20px;
+    margin: 6rem 0;
+    .explore {
+      display: none;
+    }
+    .newin {
+      padding: 0;
+
+      .highlights {
+        padding: 7rem 0;
+      }
+
+      .toolbar {
+        width: 100%;
+      }
+
+      .sticky-toolbar {
+        width: 100%;
+        left: 0px;
+        padding: 0;
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      .category-vertical-card {
+        background-size: cover;
+        background-position: 100% 100%;
+      }
+    }
   }
 }

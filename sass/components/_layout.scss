@@ -118,6 +118,25 @@
   margin: 5rem;
 }
 
+.mt-0 {
+  margin-top: 0;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+.mt-4 {
+  margin-top: 4rem;
+}
+.mt-5 {
+  margin-top: 5rem;
+}
+
 // width
 
 .w-10 {
@@ -135,12 +154,10 @@
 
 .w-40 {
   width: 40%;
-  margin: 10px 10px;
 }
 
 .w-50 {
   width: 50%;
-  margin: 10px 10px;
 }
 
 .w-60 {
@@ -149,6 +166,10 @@
 
 .w-70 {
   width: 70%;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 // text
@@ -199,4 +220,47 @@
 
 .position-relative {
   position: relative;
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .flex-md-column {
+    flex-direction: column;
+  }
+  .w-md-100 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .flex-sm-column {
+    flex-direction: column;
+  }
+  .align-items-sm-start {
+    align-items: flex-start;
+  }
+  .d-sm-none {
+    display: none;
+  }
+  .w-sm-100 {
+    width: 100%;
+  }
+
+  .m-sm-0 {
+    margin: 0;
+  }
+  .my-sm-1 {
+    margin: 1rem 0;
+  }
+  .my-sm-2 {
+    margin: 2rem 0;
+  }
+  .my-sm-3 {
+    margin: 3rem 0;
+  }
+  .my-sm-4 {
+    margin: 4rem 0;
+  }
+  .my-sm-5 {
+    margin: 5rem 0;
+  }
 }

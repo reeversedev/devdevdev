@@ -62,3 +62,33 @@
     }
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    .logo {
+      img {
+        width: 8rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .header {
+    padding: 0 2rem;
+    .logo {
+      img {
+        width: 7rem;
+      }
+    }
+  }
+  .profile-menu {
+    right: 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    left: 0;
+  }
+}
