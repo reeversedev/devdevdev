@@ -7,17 +7,11 @@
   background: #fff;
   z-index: 7;
 
-  .logo::after {
-    content: '';
-    display: inline-block;
-    height: 45px;
-    width: 45px;
-    background-color: rgb(67, 67, 146);
-    border-radius: 50%;
-    position: absolute;
-    left: 140px;
-    top: 15px;
-    opacity: 0.6;
+  .logo {
+    padding: 10px 0px;
+    img {
+      width: 9rem;
+    }
   }
   .cart {
     margin-right: 5px;

@@ -1,9 +1,13 @@
 import React from 'react';
+import logo from '../icons/logo.svg';
 
 const Header = () => {
   return (
     <div className="d-flex justify-content-between align-items-center header">
-      <h2 className="logo">dev dev dev</h2>
+      <div className="logo">
+        <img src={logo} />
+      </div>
+
       <label className="search-bar ">
         <input
           type="text"

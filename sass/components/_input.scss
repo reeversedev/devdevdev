@@ -7,7 +7,6 @@ label.search-bar {
     width: 45rem;
     font-size: 14px;
     font-weight: 300;
-    padding: 10px 10px 0px 10px;
 
     &:focus,
     :active {
@@ -34,9 +33,9 @@ label.search-bar::before {
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
-    label.search-bar {
-      input {
-        width: 15rem;
-      }
+  label.search-bar {
+    input {
+      width: 15rem;
     }
   }
+}
