@@ -129,6 +129,8 @@
     transform: translateY(5rem);
     display: flex;
     flex-direction: column;
+    width: 100%;
+
     .explore {
       position: relative;
       width: 100%;
@@ -142,7 +144,7 @@
       padding: 0;
 
       .highlights {
-        padding: 7rem 0;
+        padding: 0;
       }
 
       .toolbar {
