@@ -21,7 +21,7 @@ const Explore = () => {
             { name: 'Inspiration', icon: inspiration }
           ].map(({ name, icon }) => {
             return (
-              <li>
+              <li key={name}>
                 <a className="d-flex align-items-center">
                   <img src={icon} alt="icon" height="25" /> <span>{name}</span>
                 </a>

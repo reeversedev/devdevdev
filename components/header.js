@@ -39,7 +39,7 @@ const Header = () => {
           <div className="profile-menu">
             <ul>
               {['My Account', 'My Orders', 'Settings', 'Sign out'].map(item => (
-                <li>{item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
