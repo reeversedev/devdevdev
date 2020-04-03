@@ -10,24 +10,26 @@ const Explore = () => {
   return (
     <div className="explore">
       <h1>Explore</h1>
-      <ul>
-        {[
-          { name: 'New In', icon: flash },
-          { name: 'Clothing', icon: clothing },
-          { name: 'Shoes', icon: shoes },
-          { name: 'Accessories', icon: accessories },
-          { name: 'Activewear', icon: activewear },
-          { name: 'Inspiration', icon: inspiration }
-        ].map(({ name, icon }) => {
-          return (
-            <li>
-              <a className="d-flex align-items-center">
-                <img src={icon} alt="icon" height="25" /> <span>{name}</span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="d-flex">
+        <ul>
+          {[
+            { name: 'New In', icon: flash },
+            { name: 'Clothing', icon: clothing },
+            { name: 'Shoes', icon: shoes },
+            { name: 'Accessories', icon: accessories },
+            { name: 'Activewear', icon: activewear },
+            { name: 'Inspiration', icon: inspiration }
+          ].map(({ name, icon }) => {
+            return (
+              <li>
+                <a className="d-flex align-items-center">
+                  <img src={icon} alt="icon" height="25" /> <span>{name}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

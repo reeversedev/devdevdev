@@ -40,32 +40,24 @@ const Newin = () => {
             </div>
           </div>
           <div className="d-flex flex-sm-column">
-            <div className="w-50 w-sm-100">
-              <div className="category-vertical-card mt-1 m-sm-0 my-sm-2 scarves">
-                <p>
-                  Blanket scarf in orange and black brushed check with tassels
-                </p>
-              </div>
+            <div className="category-vertical-card m-1 m-sm-0 my-sm-2 scarves">
+              <p>
+                Blanket scarf in orange and black brushed check with tassels
+              </p>
             </div>
-            <div className="w-50 w-sm-100">
-              <div className="category-vertical-card mt-1 m-sm-0 my-sm-2 adidas">
-                <p>Adidas Originals LXCON 94 trainers in white</p>
-              </div>
+            <div className="category-vertical-card m-1 m-sm-0 my-sm-2 adidas">
+              <p>Adidas Originals LXCON 94 trainers in white</p>
             </div>
           </div>
         </div>
 
         <div className="w-50 w-md-100 w-sm-100">
           <div className="d-flex flex-sm-column">
-            <div className="w-50 w-sm-100">
-              <div className="category-vertical-card m-1 m-sm-0 my-sm-2 adidas">
-                <p>Adidas Originals LXCON 94 trainers in white</p>
-              </div>
+            <div className="category-vertical-card m-1 m-sm-0 my-sm-2 adidas">
+              <p>Adidas Originals LXCON 94 trainers in white</p>
             </div>
-            <div className="w-50 w-sm-100">
-              <div className="category-vertical-card m-1 m-sm-0 my-sm-2 sneakers">
-                <p>Lightweight super skinny joggers in light khaki</p>
-              </div>
+            <div className="category-vertical-card m-1 m-sm-0 my-sm-2 sneakers">
+              <p>Lightweight super skinny joggers in light khaki</p>
             </div>
           </div>
 

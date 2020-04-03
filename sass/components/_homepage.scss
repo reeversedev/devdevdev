@@ -69,7 +69,8 @@
       background-color: rgb(226, 224, 224);
       background-repeat: no-repeat;
       background-size: contain;
-      background-position: 0px -55px;
+      background-position: 100% 100%;
+      margin: 10px;
 
       p {
         margin: 0 auto;
@@ -125,9 +126,17 @@
 @media screen and (max-width: 425px) {
   .homepage {
     padding: 0 20px;
-    margin: 6rem 0;
+    transform: translateY(5rem);
+    display: flex;
+    flex-direction: column;
     .explore {
-      display: none;
+      position: relative;
+      width: 100%;
+      ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
     }
     .newin {
       padding: 0;
@@ -141,6 +150,7 @@
       }
 
       .sticky-toolbar {
+        position: relative;
         width: 100%;
         left: 0px;
         padding: 0;
