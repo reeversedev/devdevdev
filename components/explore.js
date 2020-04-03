@@ -10,7 +10,7 @@ const Explore = () => {
   return (
     <div className="explore">
       <h1>Explore</h1>
-      <div className="d-flex">
+      <div className="d-flex flex-wrap">
         <ul>
           {[
             { name: 'New In', icon: flash },
