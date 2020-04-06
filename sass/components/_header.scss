@@ -91,14 +91,15 @@
 @media screen and (max-width: 425px) {
   .header {
     padding: 1rem;
-    left: 0;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
   }
 
   .hello-name {
     display: flex;
     align-items: center;
     cursor: pointer;
+    width: 100%;
 
     img {
       border-radius: 50%;
