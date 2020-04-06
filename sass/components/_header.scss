@@ -112,33 +112,51 @@
     }
 
     .profile-menu {
-      visibility: hidden;
       position: absolute;
-      top: 4rem;
-      left: 1.5rem;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      left: 0;
       background: #fff;
-      width: 178px;
       box-sizing: border-box;
       border: 0.5px solid gray;
-      border-radius: 15px;
-      transform: translateY(0%);
-      transition: all ease-in-out 0.3s;
+      border-radius: 0px;
+      transition: all ease-in-out 0.9s;
 
       ul {
         padding: 0;
         list-style: none;
+        width: 100%;
+        transform: translate(0, 3rem);
         li {
-          padding: 10px;
-          font-size: 14px;
+          padding: 20px;
+          font-size: 18px;
+          text-align: center;
         }
       }
     }
 
     &:hover {
+      img {
+        z-index: 1;
+        animation-duration: 3s;
+        animation-name: slidein;
+        transform: translate(250px);
+      }
       .profile-menu {
         visibility: visible;
-        transform: translateY(1em);
+        transform: translateY(0em);
       }
     }
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(250px);
   }
 }

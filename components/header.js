@@ -48,7 +48,9 @@ const Header = () => {
             <ul>
               {['My Account', 'My Orders', 'Settings', 'Sign out'].map(
                 (item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}>
+                    <a>{item}</a>
+                  </li>
                 )
               )}
             </ul>
