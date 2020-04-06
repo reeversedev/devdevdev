@@ -113,7 +113,6 @@
 
     .profile-menu {
       position: absolute;
-      height: 100vh;
       width: 100%;
       top: 0;
       left: 0;
@@ -121,7 +120,6 @@
       box-sizing: border-box;
       border: 0.5px solid gray;
       border-radius: 0px;
-      transition: all ease-in-out 0.9s;
 
       ul {
         padding: 0;
@@ -137,26 +135,47 @@
     }
 
     &:hover {
-      img {
+      a:hover {
         z-index: 1;
-        animation-duration: 3s;
-        animation-name: slidein;
-        transform: translate(250px);
+        img {
+          animation-duration: 3s;
+          animation-name: image-slide-in;
+          transform: translate(245px);
+        }
       }
+
       .profile-menu {
         visibility: visible;
         transform: translateY(0em);
+        height: 100vh;
+        max-height: 100vh;
+        animation-duration: 2s;
+        animation-name: menu-enlarge;
       }
     }
   }
 }
 
-@keyframes slidein {
-  from {
+@keyframes image-slide-in {
+  0% {
     transform: translate(0);
   }
 
-  to {
+  90% {
     transform: translate(250px);
+  }
+
+  100% {
+    transform: translate(245px);
+  }
+}
+
+@keyframes menu-enlarge {
+  0% {
+    height: 0vh;
+  }
+
+  100% {
+    height: 100vh;
   }
 }

@@ -36,11 +36,14 @@ const Header = () => {
       </div>
       <div className="d-flex w-sm-100">
         <div className="hello-name">
-          <img
-            src="https://pbs.twimg.com/profile_images/1239922488160575489/_Ykuf9DR_400x400.jpg"
-            alt="Profile Picture"
-            height="30"
-          />
+          <a>
+            <img
+              src="https://pbs.twimg.com/profile_images/1239922488160575489/_Ykuf9DR_400x400.jpg"
+              alt="Profile Picture"
+              height="30"
+            />
+          </a>
+
           <span>
             Hello, <b>Mr. Prateek</b>
           </span>
