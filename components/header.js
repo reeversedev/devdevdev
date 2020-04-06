@@ -1,11 +1,19 @@
-import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+
 import logo from '../icons/logo.svg';
 
 const Header = () => {
   return (
     <div className="d-flex flex-sm-column justify-content-between align-items-center header">
-      <div className="logo">
-        <img src={logo} />
+      <Head>
+        <title>dev dev dev</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div className="logo d-sm-none">
+        <Link href="/">
+          <img src={logo} />
+        </Link>
       </div>
 
       <label className="search-bar">
@@ -26,7 +34,7 @@ const Header = () => {
         <span>Cart: </span>
         <span>2</span>
       </div>
-      <div className="d-flex d-sm-none">
+      <div className="d-flex">
         <div className="hello-name">
           <img
             src="https://pbs.twimg.com/profile_images/1239922488160575489/_Ykuf9DR_400x400.jpg"
@@ -38,9 +46,11 @@ const Header = () => {
           </span>
           <div className="profile-menu">
             <ul>
-              {['My Account', 'My Orders', 'Settings', 'Sign out'].map(item => (
-                <li key={item}>{item}</li>
-              ))}
+              {['My Account', 'My Orders', 'Settings', 'Sign out'].map(
+                (item) => (
+                  <li key={item}>{item}</li>
+                )
+              )}
             </ul>
           </div>
         </div>

@@ -1,4 +1,5 @@
 const withSass = require('@zeit/next-sass');
+
 module.exports = withSass({
   webpack(config, options) {
     config.module.rules.push({
@@ -6,11 +7,11 @@ module.exports = withSass({
       use: {
         loader: 'url-loader',
         options: {
-          limit: 100000
-        }
-      }
+          limit: 100000,
+        },
+      },
     });
 
     return config;
-  }
+  },
 });

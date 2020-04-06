@@ -2,8 +2,6 @@
   padding: 0rem 3rem;
   display: flex;
   flex-direction: row;
-  margin: 4rem 0;
-  top: 5%;
   z-index: 5;
 
   h1 {
@@ -22,7 +20,6 @@
 
   .explore {
     position: fixed;
-    width: 15%;
     li {
       span {
         margin: 0px 10px;
@@ -43,7 +40,7 @@
       width: calc(100% - 20%);
       background: #fff;
       z-index: 1;
-      padding: 0 2rem 0 0;
+      // padding: 0 2rem 0 0;
       box-sizing: border-box;
     }
 
@@ -109,8 +106,8 @@
   }
   .homepage .newin {
     width: 100%;
-    padding: 0 0 0 calc(100% - 80.5%);
-    transition: all ease-in 0.5s;
+    padding: 0 0 0 calc(100% - 82.5%);
+    transition: all ease-in 0.3s;
     z-index: 3;
     .sticky-toolbar {
       padding: 0 2rem 0 0;
@@ -125,7 +122,7 @@
 @media screen and (max-width: 425px) {
   .homepage {
     padding: 0 20px;
-    transform: translateY(5rem);
+    transform: translateY(2rem);
     display: flex;
     flex-direction: column;
 

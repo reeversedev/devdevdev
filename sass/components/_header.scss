@@ -2,13 +2,14 @@
   padding: 0 3rem;
   position: fixed;
   top: 0;
-  left: 10px;
+  left: 0px;
   right: 0;
   background: #fff;
   z-index: 7;
 
   .logo {
     padding: 10px 0px;
+    cursor: pointer;
     img {
       width: 9rem;
     }
@@ -89,7 +90,54 @@
 
 @media screen and (max-width: 425px) {
   .header {
-    padding: 1rem 3rem;
+    padding: 1rem;
     left: 0;
+    align-items: flex-start;
+  }
+
+  .hello-name {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      border-radius: 50%;
+      margin: 0px 10px;
+      height: 50px;
+    }
+
+    .name {
+      margin-left: 5px;
+    }
+
+    .profile-menu {
+      visibility: hidden;
+      position: absolute;
+      top: 4rem;
+      left: 1.5rem;
+      background: #fff;
+      width: 178px;
+      box-sizing: border-box;
+      border: 0.5px solid gray;
+      border-radius: 15px;
+      transform: translateY(0%);
+      transition: all ease-in-out 0.3s;
+
+      ul {
+        padding: 0;
+        list-style: none;
+        li {
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &:hover {
+      .profile-menu {
+        visibility: visible;
+        transform: translateY(1em);
+      }
+    }
   }
 }

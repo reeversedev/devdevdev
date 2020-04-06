@@ -4,6 +4,12 @@
 @import '../components/header';
 @import '../components/homepage';
 @import '../components/button';
+@import '../components/carousel';
+
+body {
+  margin: 4rem 0;
+  background-color: #ffff;
+}
 
 * {
   font-family: 'Nunito', sans-serif;

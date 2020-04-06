@@ -1,17 +1,10 @@
-import Head from 'next/head';
-import Header from '../components/header';
-import '../sass/pages/_app.scss';
 import HomePage from '../components/homepage';
+import Layout from '../components/layout';
 
 const Home = () => (
-  <div className="container">
-    <Head>
-      <title>dev dev dev</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <Header />
+  <Layout>
     <HomePage />
-  </div>
+  </Layout>
 );
 
 export default Home;

@@ -52,31 +52,34 @@ const Newin = () => {
         </div>
 
         <div className="w-50 w-md-100 w-sm-100">
-          <div className="d-flex flex-sm-column">
-            <div className="category-vertical-card m-1 m-sm-0 my-sm-2 adidas">
-              <p>Adidas Originals LXCON 94 trainers in white</p>
+          <div className="d-flex flex-column flex-sm-column">
+            <div className="d-flex flex-sm-column">
+              <div className="category-vertical-card m-1 m-sm-0 my-sm-2 adidas">
+                <p>Adidas Originals LXCON 94 trainers in white</p>
+              </div>
+              <div className="category-vertical-card m-1 m-sm-0 my-sm-2 sneakers">
+                <p>Lightweight super skinny joggers in light khaki</p>
+              </div>
             </div>
-            <div className="category-vertical-card m-1 m-sm-0 my-sm-2 sneakers">
-              <p>Lightweight super skinny joggers in light khaki</p>
-            </div>
-          </div>
-
-          <div className="category-horizontal-card yellow-background m-1 m-sm-0 my-sm-2">
-            <div className="d-flex flex-column m-2">
-              <span className="font-weight-700 font-size-22">
-                New-In Knitwear
-              </span>
-              <span className="font-weight-300 font-size-14">
-                Layers.On.Layers
-              </span>
-            </div>
-          </div>
-          <div className="category-horizontal-card pink-background m-1 m-sm-0 my-sm-2">
-            <div className="m-2">
-              <p className="font-weight-700 font-size-22">
-                New-Season Textures
-              </p>
-              <p className="font-weight-300 font-size-14">Change is here</p>
+            <div className="d-flex flex-column">
+              <div className="category-horizontal-card yellow-background m-1 m-sm-0 my-sm-2">
+                <div className="d-flex flex-column m-2">
+                  <span className="font-weight-700 font-size-22">
+                    New-In Knitwear
+                  </span>
+                  <span className="font-weight-300 font-size-14">
+                    Layers.On.Layers
+                  </span>
+                </div>
+              </div>
+              <div className="category-horizontal-card pink-background m-1 m-sm-0 my-sm-2">
+                <div className="m-2">
+                  <p className="font-weight-700 font-size-22">
+                    New-Season Textures
+                  </p>
+                  <p className="font-weight-300 font-size-14">Change is here</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

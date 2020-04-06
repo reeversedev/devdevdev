@@ -43,6 +43,7 @@ label.search-bar::before {
 
 @media screen and (max-width: 425px) {
   label.search-bar {
+    display: none;
     width: 100%;
     input {
       width: 100%;
