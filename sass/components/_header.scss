@@ -113,15 +113,17 @@
 
     .profile-menu {
       position: absolute;
+      opacity: 0;
       width: 80%;
       height: 120vh;
       top: 0;
       left: 0;
       background: #fff;
       box-sizing: border-box;
-      border: 0.5px solid gray;
+      border: 0;
       border-radius: 0px;
       transform: translateY(0em);
+      box-shadow: 5px 0px 5px 0px #e4e4e4;
 
       ul {
         padding: 0;
@@ -129,9 +131,8 @@
         width: 100%;
         transform: translate(0, 3rem);
         li {
-          padding: 20px;
+          padding: 20px 30px;
           font-size: 18px;
-          text-align: center;
         }
       }
     }
@@ -139,21 +140,22 @@
 
   .hello-name:hover {
     .profile-menu {
+      opacity: 1;
       visibility: visible;
       transform: translateY(0em);
-      animation-duration: 2s;
+      animation-duration: 1.5s;
       animation-name: menu-enlarge;
     }
     img {
       z-index: 1;
-      animation-duration: 3s;
+      animation-duration: 2s;
       animation-name: image-slide-in;
       transform: translate(245px);
     }
     span {
       z-index: 1;
       transform: translateX(-45%);
-      animation-delay: 3s;
+      // animation-delay: 3s;
       animation-duration: 2s;
       animation-name: show-name;
       visibility: visible;
@@ -166,16 +168,11 @@
 
 @keyframes image-slide-in {
   0% {
-    z-index: 1;
     transform: translate(0);
   }
 
-  90% {
-    transform: translate(100%);
-  }
-
   100% {
-    transform: translate(60%);
+    transform: translate(245px);
   }
 }
 
