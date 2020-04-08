@@ -1,3 +1,7 @@
+button {
+  transition: all ease-in-out 0.5s;
+}
+
 button.toolbar-button {
   border-radius: 10px;
   padding: 5px 20px;
@@ -153,6 +157,50 @@ button.toolbar-button.female {
       width: auto;
       opacity: 1;
     }
+  }
+}
+
+button.transaction.buynow {
+  height: 45px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  font-size: 18px;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: rgb(46, 184, 46);
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+
+  button {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    background-color: black;
+    color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: black;
+    }
+  }
+
+  span {
+    width: 40px;
+    text-align: center;
   }
 }
 
