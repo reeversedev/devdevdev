@@ -164,7 +164,7 @@ button.transaction.buynow {
   height: 45px;
   width: 200px;
   border-radius: 10px;
-  background-color: green;
+  background-color: rgb(56, 23, 56);
   color: white;
   font-size: 18px;
   transition: all ease-in-out 0.5s;
@@ -172,7 +172,7 @@ button.transaction.buynow {
   outline: none;
 
   &:hover {
-    background-color: rgb(46, 184, 46);
+    background-color: purple;
   }
 }
 
@@ -183,13 +183,13 @@ button.transaction.buynow {
   font-size: 16px;
 
   button {
-    height: 45px;
-    width: 45px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    font-size: 22px;
+    font-size: 16px;
     cursor: pointer;
     outline: none;
-    background-color: black;
+    background-color: rgb(56, 23, 56);
     color: #fff;
 
     &:hover {

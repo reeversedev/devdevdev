@@ -6,11 +6,11 @@ import Detail from '../../components/detail';
 const ProductDetail = () => {
   return (
     <Layout>
-      <div className="d-flex">
+      <div className="d-flex flex-sm-column">
         <div className="w-50 w-sm-100">
           <Carousel />
         </div>
-        <div className="w-40">
+        <div className="w-40 w-sm-100">
           <Detail />
         </div>
       </div>

@@ -2,13 +2,23 @@
   padding: 20px;
 
   .detail-panel {
-    margin: 40px;
-
+    margin: 40px 20px;
+    .name {
+      font-size: 20px;
+      font-weight: 200;
+    }
+    .product-id {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: gray;
+    }
     .price-panel {
       .price-tag {
         font-size: 22px;
         font-weight: 700;
-        color: rgb(16, 158, 28);
+        color: purple;
+        margin-bottom: 0;
       }
     }
   }
