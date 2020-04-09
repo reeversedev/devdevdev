@@ -19,3 +19,27 @@
     background-position: 100% 100%;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .carousel {
+    padding: 20px;
+    .main-box {
+      height: 450px;
+      width: 100%;
+      margin: 50px;
+      background-repeat: no-repeat;
+      background-origin: border-box;
+      background-size: cover;
+      background-position: 100% 100%;
+    }
+    .option-box {
+      height: 100px;
+      width: 100px;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+      background-origin: border-box;
+      background-size: cover;
+      background-position: 100% 100%;
+    }
+  }
+}

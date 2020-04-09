@@ -23,3 +23,11 @@
     }
   }
 }
+
+@media screen and (max-width: 425px) {
+  .detail {
+    .detail-panel {
+      margin: 0px;
+    }
+  }
+}

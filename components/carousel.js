@@ -12,7 +12,7 @@ const Carousel = () => {
         className="main-box"
         style={{ backgroundImage: `url(${products[0]})` }}
       ></div>
-      <div className="d-flex">
+      <div className="d-flex w-sm-100">
         {products.map((url) => {
           return (
             <div
