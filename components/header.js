@@ -3,6 +3,14 @@ import Link from 'next/link';
 
 import logo from '../icons/logo.svg';
 
+const links = [
+  { name: 'Home', url: '/' },
+  { name: 'Product Detail', url: '/products/product-detail' },
+  { name: 'My Orders', url: '' },
+  { name: 'Settings', url: '' },
+  { name: 'Sign Out', url: '' },
+];
+
 const Header = () => {
   return (
     <div className="d-flex flex-sm-column justify-content-between align-items-center header">
@@ -45,13 +53,13 @@ const Header = () => {
           </span>
           <div className="profile-menu">
             <ul>
-              {['My Account', 'My Orders', 'Settings', 'Sign out'].map(
-                (item) => (
-                  <li key={item}>
-                    <a>{item}</a>
-                  </li>
-                )
-              )}
+              {links.map(({ name, url }, i) => (
+                <li key={i}>
+                  <Link href={url}>
+                    <a>{name}</a>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
