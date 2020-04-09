@@ -10,7 +10,7 @@ const ProductDetail = () => {
         <div className="w-50 w-sm-100">
           <Carousel />
         </div>
-        <div className="w-40 w-sm-100">
+        <div className="w-40 w-md-50 w-sm-100">
           <Detail />
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const products = [
   'https://assets.myntassets.com/f_webp,fl_progressive/h_960,q_80,w_720/v1/assets/images/11353052/2020/3/2/6609162b-104e-46f6-b5d7-a698dc03c4051583147962360-ADIDAS-Originals-Men-Casual-Shoes-6591583147960924-1.jpg',
   'https://assets.myntassets.com/f_webp,fl_progressive/h_960,q_80,w_720/v1/assets/images/11353052/2020/3/2/2c0e954b-085e-40ff-b4f7-c41d916350af1583147962308-ADIDAS-Originals-Men-Casual-Shoes-6591583147960924-2.jpg',
@@ -6,19 +8,21 @@ const products = [
 ];
 
 const Carousel = () => {
+  const [currentPhoto, setCurrentPhoto] = useState(products[0]);
   return (
     <div className="d-flex align-items-center flex-column carousel">
       <div
         className="main-box"
-        style={{ backgroundImage: `url(${products[0]})` }}
+        style={{ backgroundImage: `url(${currentPhoto})` }}
       ></div>
       <div className="d-flex w-sm-100">
-        {products.map((url) => {
+        {products.map((url, i) => {
           return (
             <div
               key={url}
               className="option-box"
               style={{ backgroundImage: `url(${url})` }}
+              onClick={() => setCurrentPhoto(products[i])}
             ></div>
           );
         })}

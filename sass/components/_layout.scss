@@ -245,12 +245,49 @@
   position: relative;
 }
 
+select {
+  width: 100px;
+  height: 50px;
+  border-radius: 0px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
 @media (min-width: 426px) and (max-width: 768px) {
   .flex-md-column {
     flex-direction: column;
   }
   .w-md-100 {
     width: 100%;
+  }
+  .w-md-10 {
+    width: 10%;
+  }
+
+  .w-md-20 {
+    width: 20%;
+  }
+
+  .w-md-30 {
+    width: 30%;
+    margin: 0px 10px;
+  }
+
+  .w-md-40 {
+    width: 40%;
+  }
+
+  .w-md-50 {
+    width: 50%;
+  }
+
+  .w-md-60 {
+    width: 60%;
+  }
+
+  .w-md-70 {
+    width: 70%;
   }
 }
 
