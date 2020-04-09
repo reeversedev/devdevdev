@@ -22,7 +22,6 @@
 .hello-name {
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   img {
     border-radius: 50%;
@@ -61,6 +60,7 @@
   }
 
   &:hover {
+    cursor: pointer;
     .profile-menu {
       visibility: visible;
       transform: translateY(1em);
@@ -102,7 +102,6 @@
   .hello-name {
     display: flex;
     align-items: center;
-    cursor: pointer;
     width: 100%;
 
     img {
@@ -145,6 +144,7 @@
   }
 
   .hello-name:hover {
+    cursor: pointer;
     .profile-menu {
       opacity: 1;
       width: 80%;
