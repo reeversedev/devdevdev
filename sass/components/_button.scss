@@ -176,6 +176,24 @@ button.transaction.buynow {
   }
 }
 
+button.transaction.add-to-cart {
+  height: 45px;
+  width: 200px;
+  border-radius: 10px;
+  color: rgb(56, 23, 56);
+  background-color: white;
+  font-size: 18px;
+  transition: all ease-in-out 0.5s;
+  cursor: pointer;
+  outline: none;
+  border: 0.5px solid rgb(56, 23, 56);
+
+  &:hover {
+    background-color: purple;
+    color: white;
+  }
+}
+
 .button-group {
   display: flex;
   justify-content: space-between;
@@ -201,6 +219,13 @@ button.transaction.buynow {
   span {
     width: 40px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  button.transaction.buynow,
+  button.transaction.add-to-cart {
+    width: 150px;
   }
 }
 

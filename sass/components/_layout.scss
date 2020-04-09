@@ -200,6 +200,10 @@
   text-align: center;
 }
 
+.text-muted {
+  color: grey;
+}
+
 // colored backgrounds
 .cyan-background {
   background-color: rgb(170, 228, 255);
@@ -252,6 +256,8 @@ select {
   padding: 10px;
   cursor: pointer;
   background-color: #fff;
+  font-size: 14px;
+  outline: none;
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
