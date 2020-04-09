@@ -103,6 +103,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    cursor: none;
 
     img {
       border-radius: 50%;
@@ -144,7 +145,7 @@
   }
 
   .hello-name:hover {
-    cursor: pointer;
+    cursor: none;
     .profile-menu {
       opacity: 1;
       width: 80%;
