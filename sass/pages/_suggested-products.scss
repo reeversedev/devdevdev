@@ -1,0 +1,41 @@
+.suggested-products {
+  padding: 0 50px;
+  overflow: hidden;
+
+  .products {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(56, 23, 56);
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .card {
+      flex-shrink: 0;
+      transform-origin: center center;
+      transform: scale(1);
+      transition: transform 0.5s;
+
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .suggested-products {
+    padding: 20px;
+  }
+}

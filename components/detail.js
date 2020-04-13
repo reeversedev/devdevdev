@@ -87,9 +87,9 @@ const Detail = () => {
           <section>
             <p className="font-weight-700">Specifications</p>
             <div className="d-flex flex-wrap justify-content-between">
-              {specifications.map(({ heading, description }) => {
+              {specifications.map(({ heading, description }, index) => {
                 return (
-                  <div className="w-50">
+                  <div className="w-50" key={index}>
                     <p className="font-size-12 font-weight-200 text-muted">
                       {heading}
                     </p>
