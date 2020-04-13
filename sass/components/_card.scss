@@ -1,4 +1,14 @@
 .card {
   height: 300px;
   width: 200px;
+
+  .card-detail {
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .subtitle {
+      font-weight: 200;
+    }
+  }
 }

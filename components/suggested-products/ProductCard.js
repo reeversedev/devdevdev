@@ -8,7 +8,13 @@ const ProductCard = () => {
         alt=""
         className="position-absolute w-100"
       />
-      <p className="font-weight-600 font-size-16">507 adidas D` Artagnan II</p>
+      <div className="card-detail">
+        <p className="title">adidas</p>
+        <p className="subtitle">
+          Men Blue & Black Nite Jogger Colourblocked Sneakers
+        </p>
+        <p className="font-weight-600">$88.67</p>
+      </div>
     </div>
   );
 };

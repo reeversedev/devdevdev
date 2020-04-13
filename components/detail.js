@@ -1,17 +1,4 @@
-import React, { useState } from 'react';
-
-const specifications = [
-  { heading: 'Type', description: 'Sneakers' },
-  { heading: 'Toe Shape', description: 'Round Toe' },
-  { heading: 'Pattern', description: 'Colourblocked' },
-  { heading: 'Fastening', description: 'Lace-Ups' },
-  { heading: 'Shoe Width', description: 'Wide' },
-  { heading: 'Ankle Height', description: 'Regular' },
-  { heading: 'Insole', description: 'Comfort Insole' },
-  { heading: 'Sole Material', description: 'Rubber' },
-  { heading: 'Micro Trend', description: 'Contrast Sole' },
-  { heading: 'Warranty', description: '3 months' },
-];
+import { useState } from 'react';
 
 const Detail = () => {
   const [quantity, setQuantity] = useState(0);
@@ -19,7 +6,7 @@ const Detail = () => {
   return (
     <div className="d-flex flex-column detail">
       <div className="detail-panel">
-        <h2 className="m-0">507 adidas D` Artagnan II</h2>
+        <h2 className="m-0">adidas</h2>
         <p className="name">
           Men Blue & Black Nite Jogger Colourblocked Sneakers
         </p>
@@ -83,21 +70,6 @@ const Detail = () => {
           <section>
             <p className="font-weight-700">Material & Care</p>
             <p>Mesh and synthetic Wipe with a clean, dry cloth when needed</p>
-          </section>
-          <section>
-            <p className="font-weight-700">Specifications</p>
-            <div className="d-flex flex-wrap justify-content-between">
-              {specifications.map(({ heading, description }, index) => {
-                return (
-                  <div className="w-50" key={index}>
-                    <p className="font-size-12 font-weight-200 text-muted">
-                      {heading}
-                    </p>
-                    <p className="font-weight-400">{description}</p>
-                  </div>
-                );
-              })}
-            </div>
           </section>
         </div>
       </div>

@@ -26,10 +26,17 @@
   }
 }
 
+.specifications {
+  padding: 3rem 0rem 0rem 7rem;
+}
+
 @media screen and (max-width: 425px) {
   .detail {
     .detail-panel {
       margin: 0px;
     }
+  }
+  .specifications {
+    padding: 0;
   }
 }
