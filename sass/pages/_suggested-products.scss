@@ -3,6 +3,7 @@
   overflow: hidden;
 
   .products {
+    min-height: 30rem;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
