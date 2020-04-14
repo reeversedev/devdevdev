@@ -155,6 +155,19 @@
 
       .highlights {
         padding: 0;
+
+        section.vertical-section {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 350px;
+        }
+        section.horizontal-section {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 850px;
+        }
       }
 
       .toolbar {
@@ -174,6 +187,8 @@
       .category-vertical-card {
         background-size: cover;
         background-position: 100% 100%;
+        height: 400px;
+        width: 100%;
       }
     }
   }
