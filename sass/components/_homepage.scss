@@ -46,17 +46,30 @@
 
     .highlights {
       padding: 5rem 0;
+
+      section.vertical-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 350px;
+      }
+      section.horizontal-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 350px;
+      }
     }
 
     .category-horizontal-card {
       height: 160px;
       width: 100%;
-      display: grid;
+      display: flex;
       border-radius: 15px;
     }
     .category-vertical-card {
-      height: 320px;
-      width: 100%;
+      height: 100%;
+      width: 250px;
       border-radius: 15px;
       display: flex;
       align-items: flex-end;
