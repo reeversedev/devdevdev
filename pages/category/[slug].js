@@ -14,7 +14,11 @@ const Category = () => {
   const { slug } = router.query;
 
   if (!slug) {
-    return <p>Loading...</p>;
+    return (
+      <div className="homepage justify-content-center align-items-center">
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   const { name, icon } = exploreItems.filter((item) => item.slug === slug)[0];
@@ -22,7 +26,7 @@ const Category = () => {
   return (
     <Layout>
       <div className="homepage">
-        <div className="w-20">
+        <div className="w-20 w-sm-100">
           <Explore />
         </div>
         <div className="w-100">

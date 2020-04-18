@@ -35,7 +35,6 @@ const Header = () => {
       <div className="d-flex justify-content-between align-items-center cart">
         <img
           src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"
-          alt=""
           height="16"
         />
         <span>Cart: </span>
