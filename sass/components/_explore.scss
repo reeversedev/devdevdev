@@ -1,0 +1,18 @@
+.explore {
+  position: fixed;
+  h1 {
+    font-size: 2rem;
+  }
+  li {
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+    span {
+      margin: 0px 10px;
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+}

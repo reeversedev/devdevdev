@@ -1,12 +1,16 @@
 import React from 'react';
 import Explore from './explore';
-import Newin from './newin';
+import Category from '../pages/category/[slug]';
 
 const HomePage = () => {
   return (
     <div className="homepage">
-      <Explore />
-      <Newin />
+      <div className="w-20">
+        <Explore />
+      </div>
+      <div className="w-100">
+        <Category />
+      </div>
     </div>
   );
 };

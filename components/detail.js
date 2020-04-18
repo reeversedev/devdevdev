@@ -11,7 +11,7 @@ const Detail = () => {
           Men Blue & Black Nite Jogger Colourblocked Sneakers
         </p>
         <p className="product-id">ID: 250900097</p>
-        <div className="d-flex justify-content-between align-items-center price-panel mt-2">
+        <div className="d-flex justify-content-between align-items-center price-panel">
           <p className="price-tag m-0">$88.67</p>
           <div className="d-flex align-items-center justify-content-between">
             <span className="m-2">Sizes</span>

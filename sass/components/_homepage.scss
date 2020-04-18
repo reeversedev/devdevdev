@@ -18,20 +18,8 @@
     }
   }
 
-  .explore {
-    position: fixed;
-    li {
-      span {
-        margin: 0px 10px;
-        font-size: 14px;
-        font-weight: 300;
-      }
-    }
-  }
-
   .newin {
     width: 100%;
-    padding: 0 0 0 calc(100% - 84.5%);
     transition: all ease-in 0.5s;
     z-index: 3;
 
