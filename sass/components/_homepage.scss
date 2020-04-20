@@ -18,7 +18,9 @@
     }
   }
 
-  .newin {
+  .category {
+    position: absolute;
+    top: 7rem;
     width: 100%;
     transition: all ease-in 0.5s;
     z-index: 3;
@@ -34,8 +36,6 @@
     }
 
     .highlights {
-      padding: 5rem 0;
-
       section.vertical-section {
         display: flex;
         flex-direction: column;
@@ -106,7 +106,7 @@
   .homepage h1 {
     font-size: 1.6rem;
   }
-  .homepage .newin {
+  .homepage .category {
     width: 100%;
     padding: 0 0 0 calc(100% - 82.5%);
     transition: all ease-in 0.3s;
@@ -130,8 +130,9 @@
     h1 {
       font-size: 1.5rem;
     }
-    .newin {
+    .category {
       padding: 0;
+      top: 2rem;
 
       .highlights {
         padding: 0;
@@ -151,18 +152,24 @@
       }
 
       .toolbar {
+        flex-wrap: wrap-reverse;
+        padding: 1rem 0;
         width: 100%;
       }
 
       .sticky-toolbar {
-        position: relative;
+        position: fixed;
         width: 100%;
         left: 0;
-        top: 0;
+        bottom: 0;
         padding: 0;
         h1 {
           font-size: 1.5rem;
         }
+      }
+
+      .content {
+        top: 2rem;
       }
 
       .category-vertical-card {
@@ -172,5 +179,11 @@
         width: 100%;
       }
     }
+  }
+  .toolbar {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
   }
 }
