@@ -14,6 +14,8 @@ button.toolbar-button {
   margin: 10px;
   cursor: pointer;
   outline: none;
+  background: #fff;
+  position: relative;
   transition: all 0.3s ease-in-out;
 
   &:hover {
@@ -22,54 +24,17 @@ button.toolbar-button {
   }
 }
 
-button.toolbar-button.filter {
+button.toolbar-button.female {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   span.icon {
-    display: block;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color: black;
-    color: white;
-    line-height: 1.8;
-  }
-
-  span.content {
-    width: 0px;
-    opacity: 0;
-  }
-
-  &:hover,
-  :active {
-    width: 120px;
-    transition: all 0.5s ease-in-out;
-
-    span.icon {
-      opacity: 1;
-    }
-
-    span.content {
-      width: auto;
-      opacity: 1;
-    }
-  }
-}
-
-button.toolbar-button.sort {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &::before {
     content: '';
     height: 20px;
     width: 20px;
     background-size: contain;
-    background-image: url('https://cdn.iconscout.com/icon/free/png-256/sort-1780015-1518405.png');
-    transform: scaleX(-1);
+    background-image: url('https://cdn.iconscout.com/icon/free/png-256/female-symbol-1438487-1213996.png');
   }
 
   span.content {
@@ -78,8 +43,9 @@ button.toolbar-button.sort {
   }
 
   &:hover {
+    background-color: rgb(240, 165, 215);
     width: 120px;
-    transition: all 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
 
     span.icon {
       opacity: 1;
@@ -113,7 +79,7 @@ button.toolbar-button.male {
   &:hover {
     background-color: rgb(120, 225, 248);
     width: 120px;
-    transition: all 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
 
     span.icon {
       opacity: 1;
@@ -126,17 +92,18 @@ button.toolbar-button.male {
   }
 }
 
-button.toolbar-button.female {
+button.toolbar-button.sort {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  span.icon {
+  &::before {
     content: '';
     height: 20px;
     width: 20px;
     background-size: contain;
-    background-image: url('https://cdn.iconscout.com/icon/free/png-256/female-symbol-1438487-1213996.png');
+    background-image: url('https://cdn.iconscout.com/icon/free/png-256/sort-1780015-1518405.png');
+    transform: scaleX(-1);
   }
 
   span.content {
@@ -145,9 +112,44 @@ button.toolbar-button.female {
   }
 
   &:hover {
-    background-color: rgb(240, 165, 215);
     width: 120px;
-    transition: all 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+
+    span.icon {
+      opacity: 1;
+    }
+
+    span.content {
+      width: auto;
+      opacity: 1;
+    }
+  }
+}
+
+button.toolbar-button.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span.icon {
+    display: block;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    line-height: 1.8;
+  }
+
+  span.content {
+    width: 0px;
+    opacity: 0;
+  }
+
+  &:hover,
+  :active {
+    width: 120px;
+    transition: width 0.5s ease-in-out;
 
     span.icon {
       opacity: 1;
