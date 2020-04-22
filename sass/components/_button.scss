@@ -2,162 +2,191 @@ button {
   transition: all ease-in-out 0.5s;
 }
 
-button.toolbar-button {
-  border-radius: 10px;
-  padding: 5px 20px;
-  box-shadow: none;
-  height: 50px;
-  width: 60px;
-  border: 0;
-  font-weight: 700;
-  font-size: 14px;
-  margin: 10px;
-  cursor: pointer;
-  outline: none;
-  background: #fff;
-  position: relative;
-  transition: all 0.3s ease-in-out;
+.toolbar-button {
+  button {
+    border-radius: 10px;
+    padding: 5px 20px;
+    box-shadow: none;
+    height: 50px;
+    width: 60px;
+    border: 0;
+    font-weight: 700;
+    font-size: 14px;
+    margin: 10px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    position: relative;
+    transition: all 0.3s ease-in-out;
 
-  &:hover {
-    background-color: rgb(138, 138, 218);
-    color: white;
+    &:hover {
+      background-color: rgb(138, 138, 218);
+      color: white;
+    }
   }
-}
-
-button.toolbar-button.female {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  span.icon {
-    content: '';
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-image: url('https://cdn.iconscout.com/icon/free/png-256/female-symbol-1438487-1213996.png');
-  }
-
-  span.content {
-    width: 0px;
-    opacity: 0;
+  .popup-menu {
+    display: none;
   }
 
   &:hover {
-    background-color: rgb(240, 165, 215);
-    width: 120px;
-    transition: width 0.5s ease-in-out;
+    .popup-menu {
+      display: block;
+      position: absolute;
+      bottom: 4rem;
+      min-height: 50px;
+      min-width: 70px;
+      background: #fff;
+      padding: 10px;
+    }
+  }
+
+  button.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
 
     span.icon {
-      opacity: 1;
+      display: none;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: black;
+    }
+  }
+  button.female {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span.icon {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-size: contain;
+      background-image: url('https://cdn.iconscout.com/icon/free/png-256/female-symbol-1438487-1213996.png');
     }
 
     span.content {
-      width: auto;
-      opacity: 1;
-    }
-  }
-}
-
-button.toolbar-button.male {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &::before {
-    content: '';
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-image: url('https://cdn.iconscout.com/icon/free/png-256/male-symbol-1438497-1214006.png');
-  }
-
-  span.content {
-    width: 0px;
-    opacity: 0;
-  }
-
-  &:hover {
-    background-color: rgb(120, 225, 248);
-    width: 120px;
-    transition: width 0.5s ease-in-out;
-
-    span.icon {
-      opacity: 1;
+      width: 0px;
+      opacity: 0;
     }
 
-    span.content {
-      width: auto;
-      opacity: 1;
+    &:hover {
+      background-color: rgb(240, 165, 215);
+      width: 120px;
+      transition: width 0.5s ease-in-out;
+
+      span.icon {
+        opacity: 1;
+      }
+
+      span.content {
+        width: auto;
+        opacity: 1;
+      }
     }
   }
-}
+  button.male {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-button.toolbar-button.sort {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &::before {
-    content: '';
-    height: 20px;
-    width: 20px;
-    background-size: contain;
-    background-image: url('https://cdn.iconscout.com/icon/free/png-256/sort-1780015-1518405.png');
-    transform: scaleX(-1);
-  }
-
-  span.content {
-    width: 0px;
-    opacity: 0;
-  }
-
-  &:hover {
-    width: 120px;
-    transition: width 0.5s ease-in-out;
-
-    span.icon {
-      opacity: 1;
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-size: contain;
+      background-image: url('https://cdn.iconscout.com/icon/free/png-256/male-symbol-1438497-1214006.png');
     }
 
     span.content {
-      width: auto;
-      opacity: 1;
+      width: 0px;
+      opacity: 0;
+    }
+
+    &:hover {
+      background-color: rgb(120, 225, 248);
+      width: 120px;
+      transition: width 0.5s ease-in-out;
+
+      span.icon {
+        opacity: 1;
+      }
+
+      span.content {
+        width: auto;
+        opacity: 1;
+      }
     }
   }
-}
+  button.sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-button.toolbar-button.filter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  span.icon {
-    display: block;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color: black;
-    color: white;
-    line-height: 1.8;
-  }
-
-  span.content {
-    width: 0px;
-    opacity: 0;
-  }
-
-  &:hover,
-  :active {
-    width: 120px;
-    transition: width 0.5s ease-in-out;
-
-    span.icon {
-      opacity: 1;
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-size: contain;
+      background-image: url('https://cdn.iconscout.com/icon/free/png-256/sort-1780015-1518405.png');
+      transform: scaleX(-1);
     }
 
     span.content {
-      width: auto;
-      opacity: 1;
+      width: 0px;
+      opacity: 0;
+    }
+
+    &:hover {
+      width: 120px;
+      transition: width 0.5s ease-in-out;
+
+      span.icon {
+        opacity: 1;
+      }
+
+      span.content {
+        width: auto;
+        opacity: 1;
+      }
+    }
+  }
+  button.filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span.icon {
+      display: block;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background-color: black;
+      color: white;
+      line-height: 1.8;
+    }
+
+    span.content {
+      width: 0px;
+      opacity: 0;
+    }
+
+    &:hover,
+    :active {
+      width: 120px;
+      transition: width 0.5s ease-in-out;
+
+      span.icon {
+        opacity: 1;
+      }
+
+      span.content {
+        width: auto;
+        opacity: 1;
+      }
     }
   }
 }
@@ -234,13 +263,17 @@ button.transaction.add-to-cart {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  button.toolbar-button {
-    height: 50px;
+  .toolbar-button {
+    button {
+      height: 50px;
+    }
   }
 }
 
 @media (min-width: 426px) and (max-width: 768px) {
-  button.toolbar-button {
-    height: 50px;
+  .toolbar-button {
+    button {
+      height: 50px;
+    }
   }
 }

@@ -8,7 +8,7 @@ const Layout = (props) => {
       <Header />
       {props.children}
       <div className="d-flex flex-sm-column align-items-center align-items-sm-start justify-content-between sticky-toolbar d-lg-none">
-        <Toolbar />
+        <Toolbar buttons={['home', 'sort', 'filter']} />
       </div>
     </div>
   );

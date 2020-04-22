@@ -4,7 +4,6 @@ import Explore, { exploreItems } from '../../components/explore';
 import Router, { useRouter } from 'next/router';
 import Newin from '../../components/newin';
 import Toolbar from '../../components/toolbar';
-import SuggestedProducts from '../../components/suggested-products';
 import AllProducts from '../../components/all-products';
 
 const Category = () => {
@@ -40,7 +39,7 @@ const Category = () => {
                 <img src={icon} alt="icon" height="35" />{' '}
                 <h1 className="mx-1">{name}</h1>
               </div>
-              <Toolbar />
+              <Toolbar buttons={['female', 'male', 'sort', 'filter']} />
             </div>
             <div className="content">
               {slug === 'new-in' ? <Newin /> : <AllProducts />}
