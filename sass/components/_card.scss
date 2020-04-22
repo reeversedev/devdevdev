@@ -2,6 +2,7 @@
   height: 500px;
   width: 200px;
   border-radius: 25px;
+  z-index: 1;
 
   img {
     border-radius: 15px 15px 0 0;
@@ -16,6 +17,12 @@
       font-weight: 200;
     }
   }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  transition: all ease-in-out 0.3s;
 }
 
 @media screen and (max-width: 425px) {
