@@ -2,7 +2,7 @@
   height: 500px;
   width: 200px;
   border-radius: 25px;
-  z-index: 1;
+  background: #fff;
 
   img {
     border-radius: 15px 15px 0 0;
@@ -21,6 +21,8 @@
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
+    z-index: 1;
+    height: 450px;
   }
   transition: all ease-in-out 0.3s;
 }

@@ -8,9 +8,10 @@ const ProductCard = ({
   priceCurrency,
   price,
   index,
+  type,
 }) => {
   return (
-    <Link href={`/products/product-detail/${index}`}>
+    <Link href={`/products/product-detail/${index}/${type}`}>
       <div className="position-relative card">
         <img src={image} alt={name} className="position-absolute w-100" />
         <div className="card-detail">

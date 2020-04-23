@@ -31,6 +31,7 @@
       background: #fff;
       z-index: 1;
       top: 4.5rem;
+      left: 16.5rem;
       height: 100px;
       box-sizing: border-box;
     }
@@ -90,8 +91,16 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .homepage h1 {
-    font-size: 1.6rem;
+  .homepage {
+    h1 {
+      font-size: 1.6rem;
+    }
+    .category {
+      .sticky-toolbar {
+        top: 4.45rem;
+        left: 12.5rem;
+      }
+    }
   }
 
   .toolbar {

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import logo from '../icons/logo.svg';
 
 const links = [
-  { name: 'Home', url: '/' },
-  { name: 'Product Detail', url: '/products/product-detail' },
+  { name: 'Home', url: '/category/new-in' },
+  // { name: 'Product Detail', url: '/products/product-detail' },
   { name: 'My Orders', url: '' },
   { name: 'Settings', url: '' },
   { name: 'Sign Out', url: '' },
@@ -19,7 +19,7 @@ const Header = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="logo d-sm-none">
-        <Link href="/">
+        <Link href="/category/new-in">
           <img src={logo} />
         </Link>
       </div>

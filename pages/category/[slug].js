@@ -42,7 +42,7 @@ const Category = () => {
               <Toolbar buttons={['female', 'male', 'sort', 'filter']} />
             </div>
             <div className="content">
-              {slug === 'new-in' ? <Newin /> : <AllProducts />}
+              {slug === 'new-in' ? <Newin /> : <AllProducts slug={slug} />}
             </div>
           </div>
         </div>

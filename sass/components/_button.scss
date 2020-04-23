@@ -73,7 +73,9 @@ button {
       opacity: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: rgb(240, 165, 215);
       width: 120px;
       transition: width 0.5s ease-in-out;
@@ -140,7 +142,8 @@ button {
       opacity: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:active {
       width: 120px;
       transition: width 0.5s ease-in-out;
 
@@ -175,7 +178,7 @@ button {
     }
 
     &:hover,
-    :active {
+    &:active {
       width: 120px;
       transition: width 0.5s ease-in-out;
 
