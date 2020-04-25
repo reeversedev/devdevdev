@@ -5,6 +5,7 @@ import Router, { useRouter } from 'next/router';
 import Newin from '../../components/newin';
 import Toolbar from '../../components/toolbar';
 import AllProducts from '../../components/all-products';
+import Cart from '../../components/cart';
 
 const Category = () => {
   useEffect(() => {
@@ -39,13 +40,16 @@ const Category = () => {
                 <img src={icon} alt="icon" height="35" />{' '}
                 <h1 className="mx-1">{name}</h1>
               </div>
-              <Toolbar buttons={['female', 'male', 'sort', 'filter']} />
+              <Toolbar buttons={['sort', 'filter']} />
             </div>
             <div className="content">
               {slug === 'new-in' ? <Newin /> : <AllProducts slug={slug} />}
             </div>
           </div>
         </div>
+      </div>
+      <div className="cart-container">
+        <Cart />
       </div>
     </Layout>
   );

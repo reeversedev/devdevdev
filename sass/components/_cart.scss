@@ -1,0 +1,37 @@
+.cart-container {
+  position: relative;
+  .cart {
+    position: fixed;
+    right: 0;
+    z-index: 3;
+    background-color: #fff;
+    height: 100vh;
+    padding: 0 5px;
+    width: 23rem;
+    transition: all 0.5s ease-in-out;
+    animation-name: cart;
+    animation-duration: 1.2s;
+
+    .items {
+      max-height: 100vh;
+      overflow-y: auto;
+      .item {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+        border: 1px solid #777;
+      }
+    }
+  }
+}
+
+@keyframes cart {
+  0% {
+    width: 0rem;
+    visibility: hidden;
+    padding: 0;
+  }
+  100% {
+    width: 23rem;
+  }
+}

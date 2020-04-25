@@ -28,15 +28,18 @@ button {
     display: none;
   }
 
-  &:hover {
+  &:active,
+  &:hover,
+  &:focus-within {
     .popup-menu {
       display: block;
       position: absolute;
-      bottom: 4rem;
+      top: 4.5rem;
       min-height: 50px;
       min-width: 70px;
       background: #fff;
-      padding: 10px;
+      padding: 20px;
+      border-radius: 15px;
     }
   }
 
