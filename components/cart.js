@@ -9,13 +9,25 @@ const Cart = () => {
         {products.clothing.map((cloth, index) => {
           return (
             <div className="item" key={index}>
-              <img src={cloth.image} alt={cloth.name} height="120" />
-              <p>{cloth.name}</p>
-              <p></p>
-              <p className="quantity"></p>
+              <div className="w-40">
+                <img src={cloth.image} alt={cloth.name} />
+              </div>
+              <div className="description w-60">
+                <p className="brand">{cloth.brand}</p>
+                <p className="name">{cloth.name}</p>
+              </div>
+              <div className="d-flex flex-column w-30">
+                <p className="quantity">2</p>
+                <p className="price">
+                  {cloth.priceCurrency} {cloth.price}
+                </p>
+              </div>
             </div>
           );
         })}
+      </div>
+      <div className="text-center">
+        <button className="transaction buynow mt-2">Proceed to checkout</button>
       </div>
     </div>
   );
