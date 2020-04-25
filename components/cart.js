@@ -17,10 +17,16 @@ const Cart = () => {
                 <p className="name">{cloth.name}</p>
               </div>
               <div className="d-flex flex-column w-30">
-                <p className="quantity">2</p>
                 <p className="price">
                   {cloth.priceCurrency} {cloth.price}
                 </p>
+                <div className="quantity">
+                  <div className="button-group">
+                    <button className="minus">-</button>
+                    <span>2</span>
+                    <button className="plus">+</button>
+                  </div>
+                </div>
               </div>
             </div>
           );

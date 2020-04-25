@@ -32,7 +32,7 @@ const Header = () => {
         />
       </label>
 
-      <div className="d-flex justify-content-between align-items-center cart">
+      <div className="d-flex justify-content-between align-items-center">
         <img
           src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"
           height="16"

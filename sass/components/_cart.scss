@@ -33,10 +33,14 @@
 
           .name {
             white-space: normal;
-            // overflow: hidden;
             text-overflow: ellipsis;
             max-width: 80%;
           }
+        }
+        .price {
+          font-size: 20px;
+          font-weight: 700;
+          color: purple;
         }
       }
     }
@@ -51,5 +55,23 @@
   }
   100% {
     width: 23rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .cart {
+    width: auto !important;
+    top: 4rem;
+  }
+
+  @keyframes cart {
+    0% {
+      width: 0rem;
+      visibility: hidden;
+      padding: 0;
+    }
+    100% {
+      width: auto;
+    }
   }
 }
