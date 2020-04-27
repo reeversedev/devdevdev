@@ -3,14 +3,12 @@ import Carousel from '../../../components/carousel';
 import Detail from '../../../components/detail';
 import SuggestedProducts from '../../../components/suggested-products';
 
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { products } from '../../../utils/products';
 
 const ProductDetail = () => {
   const router = useRouter();
   const { slug } = router.query;
-
-  // console.log('detail slug', slug);
 
   if (slug) {
     const entry = slug && slug[0];

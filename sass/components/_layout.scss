@@ -11,6 +11,25 @@
   display: block;
 }
 
+.d-none {
+  display: none;
+}
+
+// visibility
+.v-hidden {
+  visibility: hidden;
+}
+
+.v-visible {
+  visibility: visible;
+}
+
+// cursor
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .flex-row {
   flex-direction: row;
 }

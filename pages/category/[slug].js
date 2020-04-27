@@ -48,9 +48,6 @@ const Category = () => {
           </div>
         </div>
       </div>
-      <div className="cart-container">
-        <Cart />
-      </div>
     </Layout>
   );
 };

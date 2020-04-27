@@ -1,16 +1,22 @@
 .cart-container {
-  position: relative;
+  position: fixed;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  z-index: 3;
+
   .cart {
-    position: fixed;
-    right: 0;
+    position: absolute;
     z-index: 3;
     background-color: #fff;
-    height: 100vh;
+    box-shadow: 3px 3px 3px 2px #777;
+    height: 100%;
+    width: 100%;
     padding: 0 5px;
-    width: 23rem;
+    margin: 0 auto;
     transition: all 0.5s ease-in-out;
     animation-name: cart;
-    animation-duration: 1.2s;
+    animation-duration: 1.5s;
 
     .items {
       max-height: calc(100vh - 30%);
@@ -50,11 +56,12 @@
 @keyframes cart {
   0% {
     width: 0rem;
-    visibility: hidden;
     padding: 0;
+    opacity: 0;
   }
   100% {
-    width: 23rem;
+    width: 100vw;
+    opacity: 1;
   }
 }
 
