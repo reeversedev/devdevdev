@@ -2,8 +2,11 @@
 
 ![](https://img.shields.io/github/license/reeversedev/devdevdev)
 
-The next trendy apparel e-commerce store.
-It is built using [Next.js](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+Here, the latest in trend is always on top of the stack.
+
+Take a [look](https://devdevdev.now.sh)
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
