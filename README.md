@@ -2,6 +2,10 @@
 
 An e-commerce store for selling everything related to fashion.
 
+Here, the latest in trend is always on top of the stack.
+
+Take a [look](https://devdevdev.now.sh)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
