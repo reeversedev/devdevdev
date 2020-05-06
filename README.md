@@ -1,12 +1,21 @@
 # devdevdev
 
-An e-commerce store for selling everything related to fashion.
+![](https://img.shields.io/github/license/reeversedev/devdevdev)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+The next trendy apparel e-commerce store.
+It is built using [Next.js](https://nextjs.org/) and bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -17,6 +26,14 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+## Reporting a Bug / Feature
+
+![](https://img.shields.io/github/issues/reeversedev/devdevdev)
+
+Report an [issue](https://github.com/reeversedev/devdevdev/issues) here.
+
+Use the issue [template](https://github.com/reeversedev/devdevdev/tree/master/.github/ISSUE_TEMPLATE).
 
 ## Learn More
 
@@ -32,3 +49,5 @@ You can check out [the Next.js GitHub repository](https://github.com/zeit/next.j
 The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+![](https://img.shields.io/twitter/follow/reeversedev?style=social)
