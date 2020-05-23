@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import { products } from '../utils/products';
+import React, { useContext } from 'react'
+import { products } from '../utils/products'
 
 const Cart = () => {
   return (
     <div className="cart">
-      <div className="d-flex justify-content-between">
+      <div className="cart-header d-flex justify-content-between">
         <h1>My Cart</h1>
-        <img src="/fullscreen.svg" alt="" width="20" />
+        <img src="/fullscreen.svg" alt="" width="40" />
       </div>
       <div className="cart-items-container">
         <div className="items">
@@ -33,7 +33,7 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
@@ -41,7 +41,7 @@ const Cart = () => {
         <button className="transaction buynow mt-2">Checkout</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart
