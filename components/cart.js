@@ -4,7 +4,10 @@ import { products } from '../utils/products';
 const Cart = () => {
   return (
     <div className="cart">
-      <h1>My Cart</h1>
+      <div className="d-flex justify-content-between">
+        <h1>My Cart</h1>
+        <img src="/icons/fullscreen.svg" alt="" width="20" />
+      </div>
       <div className="cart-items-container">
         <div className="items">
           {products.clothing.map((cloth, index) => {
