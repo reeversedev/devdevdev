@@ -1,18 +1,12 @@
 import Link from 'next/link';
-import flash from '../icons/flash.svg';
-import clothing from '../icons/tshirt.svg';
-import shoes from '../icons/shoes.svg';
-import accessories from '../icons/earrings.svg';
-import activewear from '../icons/activewear.svg';
-import inspiration from '../icons/inspiration.svg';
 
 export const exploreItems = [
-  { name: 'New In', icon: flash, slug: 'new-in' },
-  { name: 'Clothing', icon: clothing, slug: 'clothing' },
-  { name: 'Shoes', icon: shoes, slug: 'shoes' },
-  { name: 'Accessories', icon: accessories, slug: 'accessories' },
-  { name: 'Activewear', icon: activewear, slug: 'active-wear' },
-  { name: 'Inspiration', icon: inspiration, slug: 'inspiration' },
+  { name: 'New In', icon: '/flash.svg', slug: 'new-in' },
+  { name: 'Clothing', icon: '/tshirt.svg', slug: 'clothing' },
+  { name: 'Shoes', icon: '/shoes.svg', slug: 'shoes' },
+  { name: 'Accessories', icon: '/earrings.svg', slug: 'accessories' },
+  { name: 'Activewear', icon: '/activewear.svg', slug: 'active-wear' },
+  { name: 'Inspiration', icon: '/inspiration.svg', slug: 'inspiration' },
 ];
 
 const Explore = () => {

@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import logo from '../icons/logo.svg';
 import { useContext } from 'react';
 import { CartContext } from '../utils/CartContext';
 
@@ -22,7 +21,7 @@ const Header = () => {
       </Head>
       <div className="logo d-sm-none">
         <Link href="/category/new-in">
-          <img src={logo} />
+          <img src="/logo.svg" />
         </Link>
       </div>
 

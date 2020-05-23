@@ -6,7 +6,7 @@ const Cart = () => {
     <div className="cart">
       <div className="d-flex justify-content-between">
         <h1>My Cart</h1>
-        <img src="/icons/fullscreen.svg" alt="" width="20" />
+        <img src="/fullscreen.svg" alt="" width="20" />
       </div>
       <div className="cart-items-container">
         <div className="items">
