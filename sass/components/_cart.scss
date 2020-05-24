@@ -1,6 +1,13 @@
+.half-open {
+  height: 50vh;
+  transition: all 0.1s ease-in-out;
+}
+.full-open {
+  height: 90vh;
+  transition: all 0.1s ease-in-out;
+}
 .cart-container {
   position: fixed;
-  height: 50vh;
   overflow: hidden;
   width: 100vw;
   z-index: 3;
@@ -8,7 +15,7 @@
   border-radius: 25px 25px 0 0;
   box-shadow: 0 0 2px #777;
   animation-name: cart;
-  animation-duration: 2s;
+  animation-duration: 0.5s;
 
   .cart {
     position: absolute;

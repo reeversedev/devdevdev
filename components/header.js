@@ -1,18 +1,23 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'
+import Link from 'next/link'
 
-import { useContext } from 'react';
-import { CartContext } from '../utils/CartContext';
+import { useContext, useState } from 'react'
+import { CartContext } from '../pages'
+import { openCart, closeCart } from '../utils/actions'
 
 const links = [
   { name: 'Home', url: '/category/new-in' },
   { name: 'My Orders', url: '/' },
   { name: 'Settings', url: '/' },
   { name: 'Sign Out', url: '/' },
-];
+]
 
 const Header = () => {
-  const { cart, setCart } = useContext(CartContext);
+  const {
+    cart: { displayCart },
+    setCart,
+  } = useContext(CartContext)
+
   return (
     <div className="d-flex flex-sm-column justify-content-between align-items-center header">
       <Head>
@@ -35,7 +40,7 @@ const Header = () => {
 
       <div
         className="d-flex justify-content-between align-items-center cursor-pointer"
-        onClick={() => setCart(false)}
+        onClick={() => setCart(displayCart ? closeCart() : openCart())}
       >
         <img
           src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"
@@ -68,7 +73,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

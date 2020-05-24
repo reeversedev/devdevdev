@@ -1,31 +1,31 @@
-import React, { useEffect } from 'react';
-import Layout from '../../components/layout';
-import Explore, { exploreItems } from '../../components/explore';
-import Router, { useRouter } from 'next/router';
-import Newin from '../../components/newin';
-import Toolbar from '../../components/toolbar';
-import AllProducts from '../../components/all-products';
-import Cart from '../../components/cart';
+import React, { useEffect, useContext } from 'react'
+import Layout from '../../components/layout'
+import Explore, { exploreItems } from '../../components/explore'
+import Router, { useRouter } from 'next/router'
+import Newin from '../../components/newin'
+import Toolbar from '../../components/toolbar'
+import AllProducts from '../../components/all-products'
+import { CartContext } from '../index'
 
 const Category = () => {
   useEffect(() => {
-    const { pathname } = Router;
+    const { pathname } = Router
     if (pathname == '/') {
-      Router.push('/category/new-in');
+      Router.push('/category/new-in')
     }
-  });
-  const router = useRouter();
-  const { slug } = router.query;
+  })
+  const router = useRouter()
+  const { slug } = router.query
 
   if (!slug) {
     return (
       <div className="homepage justify-content-center align-items-center">
         <p>Loading...</p>
       </div>
-    );
+    )
   }
 
-  const { name, icon } = exploreItems.filter((item) => item.slug === slug)[0];
+  const { name, icon } = exploreItems.filter((item) => item.slug === slug)[0]
 
   return (
     <Layout>
@@ -49,7 +49,7 @@ const Category = () => {
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Category;
+export default Category

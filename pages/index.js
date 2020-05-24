@@ -1,15 +1,28 @@
 import Layout from '../components/layout'
 import Category from './category/[slug]'
-import { CartContext } from '../utils/CartContext'
-import { useState, useReducer } from 'react'
+import { useReducer } from 'react'
 
-const initialState = {}
+export const CartContext = React.createContext()
+
+const initialState = { displayCart: false, view: 'half' }
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'OPEN_CART':
+      return { ...initialState, displayCart: true, view: 'half' }
+    case 'CLOSE_CART':
+      return { ...initialState, displayCart: false, view: 'half' }
+    case 'FULL_VIEW':
+      return { ...initialState, displayCart: true, view: 'full' }
+    default:
+      return initialState
+  }
+}
 
 const Home = () => {
-  const [cart, setCart] = useState(false)
-  // const [state, dispatch] = useReducer((() => ), initialState)
+  const [cart, setCart] = useReducer(reducer, initialState)
   return (
-    <CartContext.Provider value={{}}>
+    <CartContext.Provider value={{ cart, setCart }}>
       <Layout>
         <Category />
       </Layout>
