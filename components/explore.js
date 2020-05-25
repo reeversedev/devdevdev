@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 export const exploreItems = [
   { name: 'New In', icon: '/flash.svg', slug: 'new-in' },
@@ -7,7 +7,7 @@ export const exploreItems = [
   { name: 'Accessories', icon: '/earrings.svg', slug: 'accessories' },
   { name: 'Activewear', icon: '/activewear.svg', slug: 'active-wear' },
   { name: 'Inspiration', icon: '/inspiration.svg', slug: 'inspiration' },
-];
+]
 
 const Explore = () => {
   return (
@@ -16,9 +16,9 @@ const Explore = () => {
         <h1>Explore</h1>
         <div className="d-flex flex-wrap">
           <ul>
-            {exploreItems.map(({ name, icon, slug }) => {
+            {exploreItems.map(({ name, icon, slug }, index) => {
               return (
-                <li key={name}>
+                <li key={index}>
                   <Link
                     href={`/category/[slug]`}
                     as={{ pathname: `/category/${slug}` }}
@@ -29,13 +29,13 @@ const Explore = () => {
                     </a>
                   </Link>
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Explore;
+export default Explore

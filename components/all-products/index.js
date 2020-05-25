@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductCard from '../suggested-products/ProductCard'
-import { products } from '../../utils/products'
 
 const AllProducts = ({ slug }) => {
-  console.log('SLUG', slug)
+  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch(`/api/products/${slug}`)
+      .then((data) => data.json())
+      .then(({ products }) => {
+        setLoading(false)
+        setProducts(products)
+      })
+  }, [])
+
   return (
     <div className="d-flex flex-wrap justify-content-between">
-      {products[slug].map((product, index) => {
-        return <ProductCard {...product} index={index} type={slug} />
-      })}
+      {loading && <p>Loading...</p>}
+      {products.length > 0 &&
+        products.map((product) => {
+          return (
+            <div key={product.key}>
+              <ProductCard {...product} type={slug} />
+            </div>
+          )
+        })}
     </div>
   )
 }

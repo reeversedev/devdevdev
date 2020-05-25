@@ -49,6 +49,9 @@ const Header = () => {
         <span>Cart: </span>
         <span>2</span>
       </div>
+      <div>
+        <a onClick={() => onApiClick()}>API</a>
+      </div>
       <div className="d-flex w-sm-100">
         <div className="hello-name">
           <img

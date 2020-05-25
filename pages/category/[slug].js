@@ -16,8 +16,6 @@ const Category = () => {
   const router = useRouter()
   const { slug } = router.query
 
-  console.log('slug', slug)
-
   if (!slug) {
     return (
       <div className="homepage justify-content-center align-items-center">
@@ -25,7 +23,6 @@ const Category = () => {
       </div>
     )
   }
-  console.log(exploreItems)
 
   const { name, icon } = exploreItems.filter((item) => item.slug === slug)[0]
 

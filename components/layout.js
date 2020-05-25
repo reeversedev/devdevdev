@@ -11,8 +11,6 @@ const Layout = ({ children }) => {
     cart: { displayCart, view },
   } = useContext(CartContext)
 
-  console.log('view', view, displayCart)
-
   return (
     <div className="container">
       <Header />

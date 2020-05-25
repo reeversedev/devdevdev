@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 const ProductCard = ({
   name,
@@ -7,11 +7,11 @@ const ProductCard = ({
   brand,
   priceCurrency,
   price,
-  index,
   type,
+  key,
 }) => {
   return (
-    <Link href={`/products/product-detail/${index}/${type}`}>
+    <Link href={`/products/product-detail/${key}/${type}`}>
       <div className="position-relative card">
         <img src={image} alt={name} className="position-absolute w-100" />
         <div className="card-detail">
@@ -23,7 +23,7 @@ const ProductCard = ({
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard
