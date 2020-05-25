@@ -5,7 +5,6 @@ import Router, { useRouter } from 'next/router'
 import Newin from '../../components/newin'
 import Toolbar from '../../components/toolbar'
 import AllProducts from '../../components/all-products'
-import { CartContext } from '../index'
 
 const Category = () => {
   useEffect(() => {
@@ -17,6 +16,8 @@ const Category = () => {
   const router = useRouter()
   const { slug } = router.query
 
+  console.log('slug', slug)
+
   if (!slug) {
     return (
       <div className="homepage justify-content-center align-items-center">
@@ -24,6 +25,7 @@ const Category = () => {
       </div>
     )
   }
+  console.log(exploreItems)
 
   const { name, icon } = exploreItems.filter((item) => item.slug === slug)[0]
 
