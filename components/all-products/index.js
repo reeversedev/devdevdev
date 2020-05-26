@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ProductCard from '../suggested-products/ProductCard'
+import { useRouter } from 'next/router'
 
 const AllProducts = ({ slug }) => {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
 
   useEffect(() => {
+    console.log('mounting..')
     fetch(`/api/products/${slug}`)
       .then((data) => data.json())
       .then(({ products }) => {
         setLoading(false)
         setProducts(products)
       })
-  }, [])
+  }, [slug])
 
   return (
     <div className="d-flex flex-wrap justify-content-between">
       {loading && <p>Loading...</p>}
       {products.length > 0 &&
         products.map((product) => {
-          return (
-            <div key={product.key}>
-              <ProductCard {...product} type={slug} />
-            </div>
-          )
+          return <ProductCard {...product} key={product.id} type={slug} />
         })}
     </div>
   )

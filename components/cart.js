@@ -10,26 +10,14 @@ const Cart = () => {
   } = useContext(CartContext)
   return (
     <div className="cart">
-      <div className="cart-header d-flex justify-content-between">
+      <div className="cart-header d-flex justify-content-between align-items-center">
         <h1>My Cart</h1>
-        {view === 'half' && (
-          <img
-            src="/fullscreen.svg"
-            alt=""
-            width="30"
-            onClick={() => setCart(fullviewCart())}
-            className="cursor-pointer"
-          />
-        )}
-        {view === 'full' && (
-          <img
-            src="/fullscreen-exit.svg"
-            alt=""
-            width="30"
-            onClick={() => setCart(openCart())}
-            className="cursor-pointer"
-          />
-        )}
+        <span
+          className="cursor-pointer cart-size-icon"
+          onClick={() =>
+            view === 'half' ? setCart(fullviewCart()) : setCart(openCart())
+          }
+        ></span>
       </div>
       <div className="cart-items-container">
         <div className="items">
@@ -61,7 +49,7 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart-footer">
-        <button className="transaction buynow mt-2">Checkout</button>
+        <button className="transaction buynow">Checkout</button>
       </div>
     </div>
   )

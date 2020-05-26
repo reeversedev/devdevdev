@@ -23,8 +23,7 @@ const Category = () => {
       </div>
     )
   }
-
-  const { name, icon } = exploreItems.filter((item) => item.slug === slug)[0]
+  const { name, icon } = exploreItems.filter(({ slug }) => slug === slug)[0]
 
   return (
     <Layout>
