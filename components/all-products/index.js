@@ -7,7 +7,6 @@ const AllProducts = ({ slug }) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    console.log('mounting..')
     fetch(`/api/products/${slug}`)
       .then((data) => data.json())
       .then(({ products }) => {

@@ -4,7 +4,7 @@ import Cart from './cart'
 
 import '../sass/pages/_app.scss'
 import { useContext } from 'react'
-import { CartContext } from '../pages'
+import { CartContext } from '../pages/_app'
 
 const Layout = ({ children }) => {
   const {

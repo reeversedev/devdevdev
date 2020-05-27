@@ -126,6 +126,9 @@
       }
 
       .cart-items-container {
+        max-height: calc(100% - 15rem);
+        overflow-y: scroll;
+
         .items {
           padding: 0;
           .item {

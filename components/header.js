@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import { useContext, useState } from 'react'
-import { CartContext } from '../pages'
 import { openCart, closeCart } from '../utils/actions'
+import { CartContext } from '../pages/_app'
 
 const links = [
   { name: 'Home', url: '/category/new-in' },

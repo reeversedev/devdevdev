@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { products } from '../utils/products'
-import { CartContext } from '../pages'
 import { fullviewCart, openCart } from '../utils/actions'
+import { CartContext } from '../pages/_app'
 
 const Cart = () => {
   const {

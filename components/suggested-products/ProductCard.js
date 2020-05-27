@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 const ProductCard = ({
   name,
-  description,
   image,
   brand,
   priceCurrency,
@@ -11,7 +10,10 @@ const ProductCard = ({
   id,
 }) => {
   return (
-    <Link href={`/products/detail/${id}/${type}`}>
+    <Link
+      href="/product/detail/[id]/[slug]"
+      as={`/product/detail/${id}/${type}`}
+    >
       <div className="position-relative card">
         <img src={image} alt={name} className="position-absolute w-100" />
         <div className="card-detail">
