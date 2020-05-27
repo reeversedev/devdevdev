@@ -1,4 +1,4 @@
-import ToolbarButton from './button/toolbar-button';
+import ToolbarButton from './button/ToolbarButton'
 
 const Toolbar = ({ buttons }) => {
   return (
@@ -7,7 +7,7 @@ const Toolbar = ({ buttons }) => {
         <ToolbarButton className={className} key={index} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Toolbar;
+export default Toolbar

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 const specifications = [
   { heading: 'Type', description: 'Sneakers' },
@@ -11,10 +11,10 @@ const specifications = [
   { heading: 'Sole Material', description: 'Rubber' },
   { heading: 'Micro Trend', description: 'Contrast Sole' },
   { heading: 'Warranty', description: '3 months' },
-];
+]
 
 const Detail = ({ brand, name, price, priceCurrency }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(0)
 
   return (
     <div className="d-flex flex-column detail">
@@ -96,14 +96,14 @@ const Detail = ({ brand, name, price, priceCurrency }) => {
                     </p>
                     <p className="font-weight-400">{description}</p>
                   </div>
-                );
+                )
               })}
             </div>
           </section>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Detail;
+export default Detail

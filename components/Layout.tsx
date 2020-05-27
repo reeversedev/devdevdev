@@ -1,8 +1,9 @@
-import Header from './header'
-import Toolbar from './toolbar'
-import Cart from './cart'
+import Header from './Header'
+import Toolbar from './Toolbar'
+import Cart from './Cart'
 
 import '../sass/pages/_app.scss'
+
 import { useContext } from 'react'
 import { CartContext } from '../pages/_app'
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Newin = () => {
   return (
@@ -58,7 +58,7 @@ const Newin = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Newin;
+export default Newin

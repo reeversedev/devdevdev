@@ -6,8 +6,6 @@ export default (req: NowRequest, res: NowResponse) => {
     query: { category },
   } = req
 
-  console.log('category', category)
-
   const result = products[category].map((product, index) => {
     return { ...product, ['id']: index }
   })

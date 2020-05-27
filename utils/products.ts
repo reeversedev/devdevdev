@@ -1305,4 +1305,4 @@ export const products = {
       price: '1839',
     },
   ],
-};
+}

@@ -21,7 +21,7 @@ const ToolbarButton = ({ className }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ToolbarButton;
+export default ToolbarButton

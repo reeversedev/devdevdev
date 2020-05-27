@@ -1,9 +1,23 @@
 import { AppProps } from 'next/app'
-import Layout from '../components/layout'
 
 import React, { useReducer } from 'react'
+import Layout from '../components/Layout'
 
-export const CartContext = React.createContext({})
+type CartContextType = {
+  cart: {
+    displayCart: Boolean
+    view: String
+  }
+  setCart: any
+}
+
+export const CartContext = React.createContext<CartContextType>({
+  cart: {
+    displayCart: false,
+    view: 'half',
+  },
+  setCart: () => {},
+})
 
 const initialState = { displayCart: false, view: 'half' }
 

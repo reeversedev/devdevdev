@@ -1,6 +1,6 @@
-import Layout from '../../../components/layout'
-import Carousel from '../../../components/carousel'
-import Detail from '../../../components/detail'
+import Layout from '../../../components/Layout'
+import Detail from '../../../components/Detail'
+import Carousel from '../../../components/Carousel'
 import SuggestedProducts from '../../../components/suggested-products'
 
 import { useRouter } from 'next/router'
@@ -13,7 +13,7 @@ function ProductDetail({ product, category }) {
     return (
       <Layout>
         <div className="d-flex flex-wrap justify-content-center align-items-center">
-          Loading...
+          <p>Loading...</p>
         </div>
       </Layout>
     )

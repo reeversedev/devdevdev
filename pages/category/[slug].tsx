@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from 'react'
-import Layout from '../../components/layout'
-import Explore, { exploreItems } from '../../components/explore'
+import Layout from '../../components/Layout'
 import Router, { useRouter } from 'next/router'
-import Newin from '../../components/newin'
-import Toolbar from '../../components/toolbar'
+import Toolbar from '../../components/Toolbar'
 import AllProducts from '../../components/all-products'
+import Explore, { exploreItems } from '../../components/Explore'
+import Newin from '../../components/Newin'
 
 const Category = () => {
   useEffect(() => {

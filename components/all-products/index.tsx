@@ -15,7 +15,7 @@ const AllProducts = ({ slug }) => {
   }, [slug])
 
   return (
-    <div className="d-flex flex-wrap justify-content-between">
+    <div className="d-flex flex-wrap justify-content-between align-items-center">
       {loading && <p>Loading...</p>}
       {products.length > 0 &&
         products.map((product) => {

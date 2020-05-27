@@ -1,6 +1,5 @@
-import React from 'react';
-import Explore from './explore';
-import Category from '../pages/category/[slug]';
+import Category from '../pages/category/[slug]'
+import Explore from './Explore'
 
 const HomePage = () => {
   return (
@@ -12,7 +11,7 @@ const HomePage = () => {
         <Category />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
