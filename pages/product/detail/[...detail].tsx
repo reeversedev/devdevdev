@@ -6,16 +6,18 @@ import SuggestedProducts from '../../../components/suggested-products'
 import { useRouter } from 'next/router'
 import { products } from '../../../utils/products'
 
-function ProductDetail({ detail }) {
+function ProductDetail({ product, category }) {
   const router = useRouter()
 
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return (
+      <Layout>
+        <div className="d-flex flex-wrap justify-content-center align-items-center">
+          Loading...
+        </div>
+      </Layout>
+    )
   }
-
-  const entry = detail && detail[0]
-  const category = detail && detail[1]
-  const product = products[category][entry]
 
   return (
     <Layout>
@@ -38,8 +40,11 @@ export async function getStaticProps(context) {
   const {
     params: { detail },
   } = context
+  const entry = detail[0]
+  const category = detail[1]
+  const product = products[category][entry]
   return {
-    props: { detail }, // will be passed to the page component as props
+    props: { product, category },
   }
 }
 

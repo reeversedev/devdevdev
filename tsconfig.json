@@ -19,7 +19,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/product/detail/[...detail].js",
-    "pages/category/[slug].js"
+    "pages/product/detail/[...detail].tsx",
+    "pages/category/[slug].tsx"
   ]
 }

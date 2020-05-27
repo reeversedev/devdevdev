@@ -1,6 +1,6 @@
-import React from 'react';
-import ProductCard from './ProductCard';
-import { products } from '../../utils/products';
+import React from 'react'
+import ProductCard from './ProductCard'
+import { products } from '../../utils/products'
 
 const SuggestedProducts = ({ category }) => {
   return (
@@ -9,17 +9,12 @@ const SuggestedProducts = ({ category }) => {
       <div className="products">
         {products[category].map((card, index) => {
           return (
-            <ProductCard
-              key={card.name}
-              {...card}
-              index={index}
-              type={category}
-            />
-          );
+            <ProductCard key={card.name} {...card} type={category} id={index} />
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SuggestedProducts;
+export default SuggestedProducts
