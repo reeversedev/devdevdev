@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { products } from '../utils/products'
-import { fullviewCart, openCart } from '../utils/actions'
+import { fullviewCart, openCart, closeCart } from '../utils/actions'
 import { CartContext } from '../pages/_app'
 
 const Cart = () => {
@@ -12,12 +12,18 @@ const Cart = () => {
     <div className="cart">
       <div className="cart-header d-flex justify-content-between align-items-center">
         <h1>My Cart</h1>
-        <span
-          className="cursor-pointer cart-size-icon"
-          onClick={() =>
-            view === 'half' ? setCart(fullviewCart()) : setCart(openCart())
-          }
-        ></span>
+        <div className="d-flex align-items-center">
+          <span
+            className="cursor-pointer cart-icon cart-size"
+            onClick={() =>
+              view === 'half' ? setCart(fullviewCart()) : setCart(openCart())
+            }
+          ></span>
+          <span
+            className="cursor-pointer cart-icon close-icon"
+            onClick={() => setCart(closeCart())}
+          ></span>
+        </div>
       </div>
       <div className="cart-items-container">
         <div className="items">
