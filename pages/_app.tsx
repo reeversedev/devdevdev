@@ -1,7 +1,10 @@
 import { AppProps } from 'next/app'
 
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
+import Router, { useRouter } from 'next/router'
+
 import Layout from '../components/Layout'
+import SplashScreen from '../components/SplashScreen'
 
 type CartContextType = {
   cart: {
@@ -36,6 +39,22 @@ function reducer(state, action) {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [cart, setCart] = useReducer(reducer, initialState)
+  const router = useRouter()
+  const { slug } = router.query
+
+  useEffect(() => {
+    const { pathname } = Router
+    if (pathname == '/') {
+      Router.push('/category/new-in')
+    }
+  })
+  if (!slug) {
+    return (
+      <SplashScreen>
+        <img src="/logo.svg" />
+      </SplashScreen>
+    )
+  }
   return (
     <CartContext.Provider value={{ cart, setCart }}>
       <Layout>

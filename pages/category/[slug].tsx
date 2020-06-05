@@ -7,22 +7,8 @@ import Explore, { exploreItems } from '../../components/Explore'
 import Newin from '../../components/Newin'
 
 const Category = () => {
-  useEffect(() => {
-    const { pathname } = Router
-    if (pathname == '/') {
-      Router.push('/category/new-in')
-    }
-  })
   const router = useRouter()
   const { slug } = router.query
-
-  if (!slug) {
-    return (
-      <div className="homepage justify-content-center align-items-center">
-        <p>Loading...</p>
-      </div>
-    )
-  }
   const { name, icon } = exploreItems.filter(({ slug }) => slug === slug)[0]
 
   return (
@@ -38,7 +24,7 @@ const Category = () => {
                 <img src={icon} alt="icon" height="35" />{' '}
                 <h1 className="mx-1">{name}</h1>
               </div>
-              <Toolbar buttons={['sort', 'filter']} />
+              <Toolbar buttons={['sort']} />
             </div>
             <div className="content">
               {slug === 'new-in' ? <Newin /> : <AllProducts slug={slug} />}

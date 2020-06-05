@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
         </div>
       )}
       <div className="d-flex flex-sm-column align-items-center align-items-sm-start justify-content-between sticky-toolbar d-lg-none">
-        <Toolbar buttons={['home', 'sort', 'filter']} />
+        <Toolbar buttons={['home', 'sort']} />
       </div>
     </div>
   )

@@ -8,7 +8,6 @@ button {
     padding: 5px 20px;
     box-shadow: none;
     height: 50px;
-    width: 60px;
     border: 0;
     font-weight: 700;
     font-size: 14px;
@@ -34,7 +33,7 @@ button {
     .popup-menu {
       display: block;
       position: absolute;
-      top: 4.5rem;
+      top: 5rem;
       min-height: 50px;
       min-width: 70px;
       background: #fff;
@@ -130,6 +129,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 120px;
 
     &::before {
       content: '';
@@ -141,23 +141,17 @@ button {
     }
 
     span.content {
-      width: 0px;
-      opacity: 0;
+      width: auto;
+      opacity: 1;
+    }
+
+    span.icon {
+      opacity: 1;
     }
 
     &:hover,
     &:active {
-      width: 120px;
       transition: width 0.5s ease-in-out;
-
-      span.icon {
-        opacity: 1;
-      }
-
-      span.content {
-        width: auto;
-        opacity: 1;
-      }
     }
   }
   button.filter {

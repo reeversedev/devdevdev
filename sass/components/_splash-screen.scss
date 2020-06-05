@@ -1,0 +1,23 @@
+.splash-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+
+  img {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .splash-screen {
+    img {
+      width: 60%;
+    }
+  }
+}
