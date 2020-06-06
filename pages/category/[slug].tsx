@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import Layout from '../../components/Layout'
 import Router, { useRouter } from 'next/router'
 import Toolbar from '../../components/Toolbar'
-import AllProducts from '../../components/all-products'
+import AllProducts from '../../components/AllProducts'
 import Explore, { exploreItems } from '../../components/Explore'
 import Newin from '../../components/Newin'
 

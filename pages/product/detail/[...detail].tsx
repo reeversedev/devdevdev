@@ -1,7 +1,7 @@
 import Layout from '../../../components/Layout'
 import Detail from '../../../components/Detail'
 import Carousel from '../../../components/Carousel'
-import SuggestedProducts from '../../../components/suggested-products'
+import SuggestedProducts from '../../../components/SuggestedProducts'
 
 import { useRouter } from 'next/router'
 import { products } from '../../../utils/products'

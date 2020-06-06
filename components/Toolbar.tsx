@@ -1,4 +1,4 @@
-import ToolbarButton from './button/ToolbarButton'
+import ToolbarButton from './Button/ToolbarButton'
 
 const Toolbar = ({ buttons }) => {
   return (

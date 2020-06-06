@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import ProductCard from '../suggested-products/ProductCard'
+import ProductCard from '../SuggestedProducts/ProductCard'
 
 const AllProducts = ({ slug }) => {
   const [loading, setLoading] = useState(true)
