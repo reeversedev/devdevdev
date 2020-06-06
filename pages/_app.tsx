@@ -1,7 +1,9 @@
 import { AppProps } from 'next/app'
 
-import React, { useReducer, useEffect } from 'react'
+import { useReducer, useEffect, createContext } from 'react'
 import Router, { useRouter } from 'next/router'
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from '@apollo/react-hooks'
 
 import Layout from '../components/Layout'
 import SplashScreen from '../components/SplashScreen'
@@ -14,7 +16,11 @@ type CartContextType = {
   setCart: any
 }
 
-export const CartContext = React.createContext<CartContextType>({
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+})
+
+export const CartContext = createContext<CartContextType>({
   cart: {
     displayCart: false,
     view: 'half',
@@ -56,11 +62,13 @@ function MyApp({ Component, pageProps }: AppProps) {
     )
   }
   return (
-    <CartContext.Provider value={{ cart, setCart }}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </CartContext.Provider>
+    <ApolloProvider client={client}>
+      <CartContext.Provider value={{ cart, setCart }}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </CartContext.Provider>
+    </ApolloProvider>
   )
 }
 

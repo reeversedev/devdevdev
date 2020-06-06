@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { openCart, closeCart } from '../utils/actions'
 import { CartContext } from '../pages/_app'
+import { useQuery } from '@apollo/react-hooks'
+import { gql } from 'apollo-boost'
 
 const links = [
   { name: 'Home', url: '/category/new-in' },
@@ -17,6 +19,16 @@ const Header = () => {
     cart: { displayCart },
     setCart,
   } = useContext(CartContext)
+
+  const { data, loading } = useQuery(gql`
+    {
+      hello
+    }
+  `)
+
+  if (loading) {
+    return <p>Loading...</p>
+  }
 
   return (
     <div className="d-flex flex-sm-column justify-content-between align-items-center header">
@@ -57,7 +69,7 @@ const Header = () => {
             height="30"
           />
           <span>
-            Hello, <b>Mr. Prateek</b>
+            {data.hello} <b>Mr. Prateek</b>
           </span>
           <div className="profile-menu">
             <ul>

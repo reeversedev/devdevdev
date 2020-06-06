@@ -1,0 +1,18 @@
+{
+  "name": "devdevdev",
+  "short_name": "devdevdev",
+  "theme_color": "#9e19af",
+  "background_color": "#ffffff",
+  "description": "The Trendy Store",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "./logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg"
+    }
+  ]
+}
