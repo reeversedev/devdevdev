@@ -1,6 +1,13 @@
 .close-icon {
   background: url('/close.svg');
 }
+.zero-open {
+  height: 0vh;
+  transition: all 0.1s ease-in-out;
+  .cart-footer {
+    height: 0vh;
+  }
+}
 .half-open {
   height: 50vh;
   transition: all 0.1s ease-in-out;

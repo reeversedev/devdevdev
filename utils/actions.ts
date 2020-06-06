@@ -5,7 +5,7 @@ export const openCart = () => ({
 
 export const closeCart = () => ({
   type: 'CLOSE_CART',
-  payload: false,
+  payload: true,
 })
 
 export const fullviewCart = () => ({

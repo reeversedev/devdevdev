@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { openCart, closeCart } from '../utils/actions'
 import { CartContext } from '../pages/_app'
-import { useQuery } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
+import { useHelloQuery } from '../graphql/generated/graphql'
 
 const links = [
   { name: 'Home', url: '/category/new-in' },
@@ -20,13 +19,9 @@ const Header = () => {
     setCart,
   } = useContext(CartContext)
 
-  const { data, loading } = useQuery(gql`
-    {
-      hello
-    }
-  `)
+  const { data, loading } = useHelloQuery()
 
-  if (loading) {
+  if (loading || !data) {
     return <p>Loading...</p>
   }
 
@@ -52,7 +47,7 @@ const Header = () => {
 
       <div
         className="d-flex justify-content-between align-items-center cursor-pointer"
-        onClick={() => setCart(displayCart ? closeCart() : openCart())}
+        onClick={() => setCart(!displayCart ? closeCart() : openCart())}
       >
         <img
           src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"
@@ -60,6 +55,9 @@ const Header = () => {
         />
         <span>Cart: </span>
         <span>2</span>
+      </div>
+      <div className="d-flex w-sm-100">
+        <button className="toolbar-button">Login</button>
       </div>
       <div className="d-flex w-sm-100">
         <div className="hello-name">

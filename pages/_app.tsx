@@ -22,20 +22,21 @@ const client = new ApolloClient({
 
 export const CartContext = createContext<CartContextType>({
   cart: {
-    displayCart: false,
-    view: 'half',
+    displayCart: true,
+    view: 'zero',
   },
   setCart: () => {},
 })
 
-const initialState = { displayCart: false, view: 'half' }
+const initialState = { displayCart: true, view: 'zero' }
 
 function reducer(state, action) {
+  console.log('action', action)
   switch (action.type) {
     case 'OPEN_CART':
       return { ...initialState, displayCart: true, view: 'half' }
     case 'CLOSE_CART':
-      return { ...initialState, displayCart: false, view: 'half' }
+      return { ...initialState, displayCart: true, view: 'zero' }
     case 'FULL_VIEW':
       return { ...initialState, displayCart: true, view: 'full' }
     default:

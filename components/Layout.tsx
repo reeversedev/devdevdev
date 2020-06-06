@@ -17,11 +17,7 @@ const Layout = ({ children }) => {
       <Header />
       {children}
       {displayCart && (
-        <div
-          className={`${
-            view === 'full' ? 'full-open' : 'half-open'
-          } cart-container`}
-        >
+        <div className={`${view}-open cart-container`}>
           <Cart />
         </div>
       )}
