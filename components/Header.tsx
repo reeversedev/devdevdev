@@ -5,6 +5,8 @@ import { useContext, useState } from 'react'
 import { openCart, closeCart } from '../utils/actions'
 import { CartContext } from '../pages/_app'
 import { useHelloQuery } from '../graphql/generated/graphql'
+import Login from './Modal/Register'
+import Authentication from './Modal/Authentication'
 
 const links = [
   { name: 'Home', url: '/category/new-in' },
@@ -14,6 +16,7 @@ const links = [
 ]
 
 const Header = () => {
+  const [loginForm, setLoginForm] = useState(false)
   const {
     cart: { displayCart },
     setCart,
@@ -45,7 +48,8 @@ const Header = () => {
         />
       </label>
 
-      <div
+      {/* Active when login is implemented */}
+      {/* <div
         className="d-flex justify-content-between align-items-center cursor-pointer"
         onClick={() => setCart(!displayCart ? closeCart() : openCart())}
       >
@@ -55,11 +59,21 @@ const Header = () => {
         />
         <span>Cart: </span>
         <span>2</span>
-      </div>
+      </div> */}
       <div className="d-flex w-sm-100">
-        <button className="toolbar-button">Login</button>
+        <button
+          className="toolbar-button"
+          onClick={() => setLoginForm(!loginForm)}
+        >
+          Login
+        </button>
+        {loginForm && (
+          <Authentication onModalClose={() => setLoginForm(false)} />
+        )}
       </div>
-      <div className="d-flex w-sm-100">
+
+      {/* Active when login is implemented */}
+      {/* <div className="d-flex w-sm-100">
         <div className="hello-name">
           <img
             src="https://pbs.twimg.com/profile_images/1239922488160575489/_Ykuf9DR_400x400.jpg"
@@ -81,7 +95,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

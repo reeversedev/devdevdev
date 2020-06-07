@@ -10,27 +10,36 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
+    "@apollo/react-ssr": "^3.1.5",
     "@zeit/next-sass": "^1.0.1",
     "apollo-boost": "^0.4.9",
+    "apollo-link-context": "^1.0.20",
+    "apollo-link-token-refresh": "^0.3.1",
+    "apollo-server-core": "^2.14.2",
+    "cookie": "^0.4.1",
     "graphql": "^15.0.0",
-    "next": "^9.4.2",
+    "isomorphic-unfetch": "^3.0.0",
+    "jwt-decode": "^2.2.0",
+    "next": "^9.4.4",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "url-loader": "^4.1.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.15.1",
+    "@graphql-codegen/cli": "^1.15.1",
+    "@graphql-codegen/plugin-helpers": "^1.15.1",
+    "@graphql-codegen/typescript": "^1.15.1",
+    "@graphql-codegen/typescript-operations": "^1.15.1",
+    "@graphql-codegen/typescript-react-apollo": "^1.15.1",
     "@now/node": "^1.6.1",
     "@types/graphql": "^14.5.0",
     "@types/react": "^16.9.35",
+    "graphql-let": "^0.10.0",
     "husky": "^4.2.5",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",
-    "typescript": "^3.9.3",
-    "@graphql-codegen/typescript": "1.15.1",
-    "@graphql-codegen/typescript-operations": "1.15.1",
-    "@graphql-codegen/typescript-react-apollo": "1.15.1"
+    "typescript": "^3.9.5"
   },
   "husky": {
     "hooks": {

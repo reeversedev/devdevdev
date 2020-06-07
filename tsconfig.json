@@ -20,6 +20,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/product/detail/[...detail].tsx",
-    "pages/category/[slug].tsx"
+    "pages/category/[slug].tsx",
+    "lib/withApollo.tsz"
   ]
 }

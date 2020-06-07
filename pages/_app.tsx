@@ -7,6 +7,7 @@ import { ApolloProvider } from '@apollo/react-hooks'
 
 import Layout from '../components/Layout'
 import SplashScreen from '../components/SplashScreen'
+import { withApollo } from '../lib/withApollo'
 
 type CartContextType = {
   cart: {
@@ -15,10 +16,6 @@ type CartContextType = {
   }
   setCart: any
 }
-
-const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
-})
 
 export const CartContext = createContext<CartContextType>({
   cart: {
@@ -44,7 +41,7 @@ function reducer(state, action) {
   }
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, apolloClient }) {
   const [cart, setCart] = useReducer(reducer, initialState)
   const router = useRouter()
   const { slug } = router.query
@@ -63,7 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     )
   }
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <CartContext.Provider value={{ cart, setCart }}>
         <Layout>
           <Component {...pageProps} />
@@ -73,4 +70,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default withApollo(MyApp)
