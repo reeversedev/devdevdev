@@ -21,19 +21,12 @@ const Login = ({ onModalClose }) => {
     return <p>Loading...</p>
   }
 
-  if (error) {
-    console.log('err', error)
-    return <span>{JSON.stringify(error)}</span>
-  }
-
   return (
     <div className="form">
       <form
         onSubmit={async (e) => {
           try {
             e.preventDefault()
-            console.log(e)
-            console.log('state', state)
             await login()
           } catch (error) {}
         }}
@@ -49,6 +42,10 @@ const Login = ({ onModalClose }) => {
               />
             </div>
           ))}
+          {error &&
+            error.graphQLErrors.map((err) => {
+              return <span style={{ color: 'red' }}>{err.message}</span>
+            })}
           <button type="submit" disabled={loading} className="d-flex">
             Login
           </button>
