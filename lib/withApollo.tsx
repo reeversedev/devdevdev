@@ -60,17 +60,24 @@ export function withApollo(PageComponent: any, { ssr = true } = {}) {
       let serverAccessToken = ''
 
       if (isServer()) {
-        const cookies = req.headers.cookie && cookie.parse(req.headers.cookie)
-        if (cookies && cookies.jid) {
-          const response = await fetch('http://localhost:4000/refresh_token', {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-              cookie: 'jid=' + cookies.jid,
-            },
-          })
-          const data = await response.json()
-          serverAccessToken = data.accessToken
+        try {
+          const cookies = cookie.parse(req.headers.cookie)
+          if (cookies.jid) {
+            const response = await fetch(
+              'http://localhost:4000/refresh_token',
+              {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                  cookie: 'jid=' + cookies.jid,
+                },
+              }
+            )
+            const data = await response.json()
+            serverAccessToken = data.accessToken
+          }
+        } catch (err) {
+          console.log(err)
         }
       }
 
@@ -207,20 +214,14 @@ function createApolloClient(initialState = {}, serverAccessToken?: string) {
     return {
       headers: {
         ...headers,
-        authorization: token ? `bearer ${token}` : '',
+        authorization: token ? `Bearer ${token}` : '',
       },
     }
   })
 
   const errorLink = onError(({ graphQLErrors, networkError }) => {
-    if (graphQLErrors)
-      graphQLErrors.map(({ message, locations, path }) =>
-        console.log(
-          `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
-        )
-      )
-
-    if (networkError) console.log(`[Network error]: ${networkError}`)
+    console.log(graphQLErrors)
+    console.log(networkError)
   })
 
   return new ApolloClient({

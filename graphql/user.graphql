@@ -17,3 +17,12 @@ mutation login($email: String!, $password: String!) {
     accessToken
   }
 }
+
+query profile {
+  profile {
+    id
+    firstName
+    lastName
+    email
+  }
+}

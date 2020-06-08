@@ -14,7 +14,7 @@ export type Scalars = {
 export type Query = {
   __typename?: 'Query'
   hello: Scalars['String']
-  bye: Scalars['String']
+  profile: User
   Users: Array<User>
 }
 
@@ -77,6 +77,15 @@ export type LoginMutationVariables = {
 
 export type LoginMutation = { __typename?: 'Mutation' } & {
   login: { __typename?: 'LoginResponse' } & Pick<LoginResponse, 'accessToken'>
+}
+
+export type ProfileQueryVariables = {}
+
+export type ProfileQuery = { __typename?: 'Query' } & {
+  profile: { __typename?: 'User' } & Pick<
+    User,
+    'id' | 'firstName' | 'lastName' | 'email'
+  >
 }
 
 export const HelloDocument = gql`
@@ -235,4 +244,58 @@ export type LoginMutationResult = ApolloReactCommon.MutationResult<
 export type LoginMutationOptions = ApolloReactCommon.BaseMutationOptions<
   LoginMutation,
   LoginMutationVariables
+>
+export const ProfileDocument = gql`
+  query profile {
+    profile {
+      id
+      firstName
+      lastName
+      email
+    }
+  }
+`
+
+/**
+ * __useProfileQuery__
+ *
+ * To run a query within a React component, call `useProfileQuery` and pass it any options that fit your needs.
+ * When your component renders, `useProfileQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useProfileQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useProfileQuery(
+  baseOptions?: ApolloReactHooks.QueryHookOptions<
+    ProfileQuery,
+    ProfileQueryVariables
+  >
+) {
+  return ApolloReactHooks.useQuery<ProfileQuery, ProfileQueryVariables>(
+    ProfileDocument,
+    baseOptions
+  )
+}
+export function useProfileLazyQuery(
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    ProfileQuery,
+    ProfileQueryVariables
+  >
+) {
+  return ApolloReactHooks.useLazyQuery<ProfileQuery, ProfileQueryVariables>(
+    ProfileDocument,
+    baseOptions
+  )
+}
+export type ProfileQueryHookResult = ReturnType<typeof useProfileQuery>
+export type ProfileLazyQueryHookResult = ReturnType<typeof useProfileLazyQuery>
+export type ProfileQueryResult = ApolloReactCommon.QueryResult<
+  ProfileQuery,
+  ProfileQueryVariables
 >

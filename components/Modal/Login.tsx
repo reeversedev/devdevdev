@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useLoginMutation } from '../../graphql/generated/graphql'
 import { withApollo } from '../../lib/withApollo'
+import { setAccessToken } from '../../lib/accessToken'
+import Router from 'next/router'
 
 const fields = [
   { name: 'email', label: 'Email', type: 'email' },
   { name: 'password', label: 'Password', type: 'password' },
 ]
 
-const Login = ({ onModalClose, serverAccessToken }) => {
+const Login = ({ onModalClose }) => {
   const [state, setState] = useState({
     email: '',
     password: '',
@@ -21,16 +23,17 @@ const Login = ({ onModalClose, serverAccessToken }) => {
     return <p>Loading...</p>
   }
 
-  console.log('serverAccessToken', serverAccessToken)
-
   return (
     <div className="form">
       <form
         onSubmit={async (e) => {
           try {
             e.preventDefault()
-            await login()
-            // console.log('data', data)
+            const response = await login()
+            if (response && response.data) {
+              setAccessToken(response.data.login.accessToken)
+              Router.push('/account/profile')
+            }
           } catch (error) {}
         }}
       >
