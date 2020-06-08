@@ -9,7 +9,7 @@ const SuggestedProducts = ({ category }) => {
       <div className="products">
         {products[category].map((card, index) => {
           return (
-            <ProductCard key={card.name} {...card} type={category} id={index} />
+            <ProductCard key={index} {...card} type={category} id={index} />
           )
         })}
       </div>
