@@ -1,12 +1,8 @@
-import { AppProps } from 'next/app'
-
 import { useReducer, useEffect, createContext } from 'react'
 import Router, { useRouter } from 'next/router'
-import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 
 import Layout from '../components/Layout'
-import SplashScreen from '../components/SplashScreen'
 import { withApollo } from '../lib/withApollo'
 
 type CartContextType = {
@@ -28,7 +24,6 @@ export const CartContext = createContext<CartContextType>({
 const initialState = { displayCart: true, view: 'zero' }
 
 function reducer(state, action) {
-  console.log('action', action)
   switch (action.type) {
     case 'OPEN_CART':
       return { ...initialState, displayCart: true, view: 'half' }
@@ -43,8 +38,6 @@ function reducer(state, action) {
 
 function MyApp({ Component, pageProps, apolloClient }) {
   const [cart, setCart] = useReducer(reducer, initialState)
-  const router = useRouter()
-  const { slug } = router.query
 
   useEffect(() => {
     const { pathname } = Router
@@ -52,13 +45,6 @@ function MyApp({ Component, pageProps, apolloClient }) {
       Router.push('/category/new-in')
     }
   })
-  if (!slug) {
-    return (
-      <SplashScreen>
-        <img src="/logo.svg" />
-      </SplashScreen>
-    )
-  }
   return (
     <ApolloProvider client={apolloClient}>
       <CartContext.Provider value={{ cart, setCart }}>

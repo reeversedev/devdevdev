@@ -37,8 +37,6 @@ const Register: React.FC<IRegisterFormProps> = ({ onModalClose }) => {
       <form
         onSubmit={async (e) => {
           e.preventDefault()
-          console.log(e)
-          console.log('state', state)
           register()
         }}
       >

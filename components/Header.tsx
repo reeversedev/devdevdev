@@ -61,12 +61,9 @@ const Header = () => {
         <span>2</span>
       </div> */}
       <div className="d-flex w-sm-100">
-        <button
-          className="toolbar-button"
-          onClick={() => setLoginForm(!loginForm)}
-        >
+        <a className="cursor-pointer" onClick={() => setLoginForm(!loginForm)}>
           Login
-        </button>
+        </a>
         {loginForm && (
           <Authentication onModalClose={() => setLoginForm(false)} />
         )}

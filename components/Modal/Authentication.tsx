@@ -14,7 +14,7 @@ const Authentication: React.FC<IAuthenticationFormProps> = ({
   const [mode, setMode] = useState('Register')
 
   return (
-    <div className="modal Authentication-form">
+    <div className="modal authentication-form">
       <div className="modal-content">
         <div className="modal-header">
           <span className="close" onClick={() => onModalClose()}>

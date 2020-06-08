@@ -7,7 +7,7 @@ const fields = [
   { name: 'password', label: 'Password', type: 'password' },
 ]
 
-const Login = ({ onModalClose }) => {
+const Login = ({ onModalClose, serverAccessToken }) => {
   const [state, setState] = useState({
     email: '',
     password: '',
@@ -21,6 +21,8 @@ const Login = ({ onModalClose }) => {
     return <p>Loading...</p>
   }
 
+  console.log('serverAccessToken', serverAccessToken)
+
   return (
     <div className="form">
       <form
@@ -28,6 +30,7 @@ const Login = ({ onModalClose }) => {
           try {
             e.preventDefault()
             await login()
+            // console.log('data', data)
           } catch (error) {}
         }}
       >
