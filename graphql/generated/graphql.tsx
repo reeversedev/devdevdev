@@ -52,6 +52,7 @@ export type MutationLoginArgs = {
 export type LoginResponse = {
   __typename?: 'LoginResponse'
   accessToken: Scalars['String']
+  user: User
 }
 
 export type HelloQueryVariables = {}
@@ -76,7 +77,15 @@ export type LoginMutationVariables = {
 }
 
 export type LoginMutation = { __typename?: 'Mutation' } & {
-  login: { __typename?: 'LoginResponse' } & Pick<LoginResponse, 'accessToken'>
+  login: { __typename?: 'LoginResponse' } & Pick<
+    LoginResponse,
+    'accessToken'
+  > & {
+      profile: { __typename?: 'User' } & Pick<
+        User,
+        'id' | 'firstName' | 'lastName' | 'email'
+      >
+    }
 }
 
 export type ProfileQueryVariables = {}
@@ -200,6 +209,12 @@ export const LoginDocument = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       accessToken
+      profile: user {
+        id
+        firstName
+        lastName
+        email
+      }
     }
   }
 `

@@ -6,7 +6,7 @@
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
+  overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   transition: all 2s ease-in-out;
@@ -36,4 +36,13 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .modal {
+    .modal-content {
+      margin: 10px;
+      width: fit-content;
+    }
+  }
 }

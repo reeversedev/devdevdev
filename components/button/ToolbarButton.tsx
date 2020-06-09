@@ -1,12 +1,29 @@
-const ToolbarButton = ({ className }) => {
+import Link from 'next/link'
+
+const ToolbarButton = ({ className, link }) => {
+  console.log('link', link)
   return (
     <div className="toolbar-button">
-      <button className={className}>
-        <span className="icon"></span>{' '}
-        <span className="content">
-          {className.charAt(0).toUpperCase() + className.slice(1)}
-        </span>
-      </button>
+      {link ? (
+        <Link href={link}>
+          <a className={className}>
+            <span className="icon"></span>{' '}
+            <span className="content">
+              {className &&
+                className.charAt(0).toUpperCase() + className.slice(1)}
+            </span>
+          </a>
+        </Link>
+      ) : (
+        <a className={className}>
+          <span className="icon"></span>{' '}
+          <span className="content">
+            {className &&
+              className.charAt(0).toUpperCase() + className.slice(1)}
+          </span>
+        </a>
+      )}
+
       <div className="popup-menu">
         <h4>Choose Gender</h4>
         <div className="d-flex flex-column">

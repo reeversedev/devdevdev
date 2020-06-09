@@ -1,11 +1,24 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 import { useProfileQuery } from '../../graphql/generated/graphql'
+import Router from 'next/router'
 
-const Profile = () => {
+const Profile = (props) => {
   const { data, loading, error } = useProfileQuery()
+
   if (loading) {
-    return <span>Loading...</span>
+    return (
+      <Layout>
+        <div className="d-flex justify-content-center align-items-center">
+          Loading...
+        </div>
+      </Layout>
+    )
+  }
+  if (error) {
+    return error.graphQLErrors.map((err) => {
+      err.message === 'not authenticated' && Router.push('/')
+    })
   }
   const {
     profile: { firstName, lastName, email },

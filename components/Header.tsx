@@ -4,8 +4,6 @@ import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { openCart, closeCart } from '../utils/actions'
 import { CartContext } from '../pages/_app'
-import { useHelloQuery } from '../graphql/generated/graphql'
-import Login from './Modal/Register'
 import Authentication from './Modal/Authentication'
 
 const links = [
@@ -15,18 +13,12 @@ const links = [
   { name: 'Sign Out', url: '/' },
 ]
 
-const Header = () => {
+const Header = ({ firstName }) => {
   const [loginForm, setLoginForm] = useState(false)
   const {
     cart: { displayCart },
     setCart,
   } = useContext(CartContext)
-
-  const { data, loading } = useHelloQuery()
-
-  if (loading || !data) {
-    return <p>Loading...</p>
-  }
 
   return (
     <div className="d-flex flex-sm-column justify-content-between align-items-center header">
@@ -49,50 +41,60 @@ const Header = () => {
       </label>
 
       {/* Active when login is implemented */}
-      {/* <div
-        className="d-flex justify-content-between align-items-center cursor-pointer"
-        onClick={() => setCart(!displayCart ? closeCart() : openCart())}
-      >
-        <img
-          src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"
-          height="16"
-        />
-        <span>Cart: </span>
-        <span>2</span>
-      </div> */}
-      <div className="d-flex w-sm-100">
-        <a className="cursor-pointer" onClick={() => setLoginForm(!loginForm)}>
-          Login
-        </a>
-        {loginForm && (
-          <Authentication onModalClose={() => setLoginForm(false)} />
-        )}
-      </div>
+      {firstName && (
+        <div
+          className="d-flex justify-content-between align-items-center cursor-pointer"
+          onClick={() => setCart(!displayCart ? closeCart() : openCart())}
+        >
+          <img
+            src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"
+            height="16"
+          />
+          <span>Cart: </span>
+          <span>2</span>
+        </div>
+      )}
+      {!firstName && (
+        <div className="d-flex w-sm-100">
+          <a
+            className="cursor-pointer d-flex justify-content-between font-weight-700"
+            onClick={() => setLoginForm(!loginForm)}
+          >
+            <img src="/user.svg" height="20" alt="user" className="mr-2" />{' '}
+            Login
+          </a>
+          {loginForm && (
+            <Authentication onModalClose={() => setLoginForm(false)} />
+          )}
+        </div>
+      )}
 
       {/* Active when login is implemented */}
-      {/* <div className="d-flex w-sm-100">
-        <div className="hello-name">
-          <img
-            src="https://pbs.twimg.com/profile_images/1239922488160575489/_Ykuf9DR_400x400.jpg"
-            alt="Profile Picture"
-            height="30"
-          />
-          <span>
-            {data.hello} <b>Mr. Prateek</b>
-          </span>
-          <div className="profile-menu">
-            <ul>
-              {links.map(({ name, url }, i) => (
-                <li key={i}>
-                  <Link href={url}>
-                    <a>{name}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      {firstName && (
+        <div className="d-flex w-sm-100">
+          <div className="hello-name">
+            <img
+              src="https://pbs.twimg.com/profile_images/1239922488160575489/_Ykuf9DR_400x400.jpg"
+              alt="Profile Picture"
+              height="30"
+            />
+            <span>
+              Hey! <b>{firstName}</b>
+            </span>
+            <div className="profile-menu">
+              <ul>
+                {links.map(({ name, url }, i) => (
+                  <li key={i}>
+                    <Link href={url}>
+                      <a>{name}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div> */}
+      )}
     </div>
   )
 }

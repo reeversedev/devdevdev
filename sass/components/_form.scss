@@ -10,7 +10,7 @@
     input {
       display: block;
       height: 25px;
-      width: 90%;
+      width: -webkit-fill-available;
       padding: 10px;
     }
   }
@@ -23,5 +23,16 @@
     font-weight: 500;
     padding: 15px 20px;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .form {
+    .form-item {
+      width: 100%;
+    }
+    button[type='submit'] {
+      align-self: flex-end;
+    }
   }
 }

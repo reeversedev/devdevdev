@@ -1,5 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useLoginMutation } from '../../graphql/generated/graphql'
+import { useState } from 'react'
+import {
+  useLoginMutation,
+  LoginDocument,
+  ProfileDocument,
+  ProfileQuery,
+} from '../../graphql/generated/graphql'
 import { withApollo } from '../../lib/withApollo'
 import { setAccessToken } from '../../lib/accessToken'
 import Router from 'next/router'
@@ -15,9 +20,7 @@ const Login = ({ onModalClose }) => {
     password: '',
   })
 
-  const [login, { loading, error, data }] = useLoginMutation({
-    variables: state,
-  })
+  const [login, { loading, error, data }] = useLoginMutation()
 
   if (loading) {
     return <p>Loading...</p>
@@ -29,15 +32,31 @@ const Login = ({ onModalClose }) => {
         onSubmit={async (e) => {
           try {
             e.preventDefault()
-            const response = await login()
+            const response = await login({
+              variables: state,
+              update: (store, { data }) => {
+                if (!data) {
+                  return null
+                }
+
+                store.writeQuery<ProfileQuery>({
+                  query: ProfileDocument,
+                  data: {
+                    profile: data.login.profile,
+                  },
+                })
+              },
+            })
             if (response && response.data) {
               setAccessToken(response.data.login.accessToken)
-              Router.push('/account/profile')
+              Router.reload()
             }
-          } catch (error) {}
+          } catch (error) {
+            return onModalClose()
+          }
         }}
       >
-        <div className="d-flex flex-wrap justify-content-between">
+        <div className="d-flex flex-sm-column flex-wrap justify-content-between">
           {fields.map(({ label, name, type }, index) => (
             <div className="form-item" key={index}>
               <label htmlFor={name}>{label}</label>

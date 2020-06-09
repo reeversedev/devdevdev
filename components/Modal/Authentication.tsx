@@ -11,7 +11,7 @@ interface IAuthenticationFormProps {
 const Authentication: React.FC<IAuthenticationFormProps> = ({
   onModalClose,
 }) => {
-  const [mode, setMode] = useState('Register')
+  const [mode, setMode] = useState('Login')
 
   return (
     <div className="modal authentication-form">
@@ -22,17 +22,18 @@ const Authentication: React.FC<IAuthenticationFormProps> = ({
           </span>
         </div>
         <div className="modal-body">
-          <div className="d-flex justify-content-between align-items-center py-4">
-            <div className="w-50">
+          <div className="d-flex flex-sm-column justify-content-between align-items-center py-4">
+            <div className="w-50 w-sm-100">
               <div
                 style={{
                   backgroundImage: `url('/logo.svg')`,
                   backgroundRepeat: 'no-repeat',
                   height: '200px',
+                  backgroundSize: 'contain',
                 }}
               ></div>
             </div>
-            <div className="w-50">
+            <div className="w-50 w-sm-100">
               <h1>Don't hide!</h1>
               <p>Sign up now to receive exclusive offers.</p>
               <p>

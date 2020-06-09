@@ -3,9 +3,8 @@ button {
 }
 
 .toolbar-button {
-  button {
+  a {
     border-radius: 10px;
-    padding: 5px 20px;
     box-shadow: none;
     height: 50px;
     border: 0;
@@ -17,11 +16,16 @@ button {
     background: #fff;
     position: relative;
     transition: all 0.3s ease-in-out;
+    color: black;
+    text-decoration: none;
 
     &:hover {
       background-color: rgb(138, 138, 218);
       color: white;
     }
+  }
+  span.content {
+    margin: 10px;
   }
   .popup-menu {
     display: none;
@@ -42,11 +46,19 @@ button {
     }
   }
 
-  button.home {
+  a.home {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 10px;
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-size: contain;
+      background-image: url('/home.svg');
+      transform: scaleX(-1);
+    }
 
     span.icon {
       display: none;
@@ -57,7 +69,36 @@ button {
       color: black;
     }
   }
-  button.female {
+
+  a.cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-size: contain;
+      background-image: url('/close.svg');
+      transform: scaleX(-1);
+    }
+    span.content {
+      width: auto;
+      opacity: 1;
+    }
+
+    span.icon {
+      opacity: 1;
+    }
+
+    &:hover,
+    &:active {
+      transition: width 0.5s ease-in-out;
+    }
+  }
+
+  a.female {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -92,7 +133,7 @@ button {
       }
     }
   }
-  button.male {
+  a.male {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,11 +166,11 @@ button {
       }
     }
   }
-  button.sort {
+  a.sort {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 120px;
+    width: auto;
 
     &::before {
       content: '';
@@ -154,7 +195,7 @@ button {
       transition: width 0.5s ease-in-out;
     }
   }
-  button.filter {
+  a.filter {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -191,7 +232,10 @@ button {
   }
 }
 
-button.transaction.buynow {
+a.transaction.buynow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 45px;
   width: 200px;
   border-radius: 10px;
@@ -208,7 +252,7 @@ button.transaction.buynow {
   }
 }
 
-button.transaction.add-to-cart {
+a.transaction.add-to-cart {
   height: 45px;
   width: 200px;
   border-radius: 10px;
@@ -257,15 +301,15 @@ button.transaction.add-to-cart {
 }
 
 @media screen and (max-width: 425px) {
-  button.transaction.buynow,
-  button.transaction.add-to-cart {
+  a.transaction.buynow,
+  a.transaction.add-to-cart {
     width: 150px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .toolbar-button {
-    button {
+    a {
       height: 50px;
     }
   }
@@ -273,7 +317,7 @@ button.transaction.add-to-cart {
 
 @media (min-width: 426px) and (max-width: 768px) {
   .toolbar-button {
-    button {
+    a {
       height: 50px;
     }
   }

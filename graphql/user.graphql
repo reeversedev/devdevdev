@@ -15,6 +15,12 @@ mutation register(
 mutation login($email: String!, $password: String!) {
   login(email: $email, password: $password) {
     accessToken
+    profile: user {
+      id
+      firstName
+      lastName
+      email
+    }
   }
 }
 

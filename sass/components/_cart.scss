@@ -118,8 +118,6 @@
 
 @media screen and (max-width: 425px) {
   .cart-container {
-    height: 100vh;
-    animation-name: cart;
     animation-duration: 0.1s;
     .cart {
       width: auto !important;
@@ -162,11 +160,13 @@
   }
 
   .half-open {
+    height: 100vh;
     .cart-size {
       display: none;
     }
   }
   .full-open {
+    height: 100vh;
     .cart-size {
       display: none;
     }
