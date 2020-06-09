@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 const ToolbarButton = ({ className, link }) => {
-  console.log('link', link)
   return (
     <div className="toolbar-button">
       {link ? (
