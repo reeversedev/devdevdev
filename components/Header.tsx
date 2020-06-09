@@ -5,12 +5,14 @@ import { useContext, useState } from 'react'
 import { openCart, closeCart } from '../utils/actions'
 import { CartContext } from '../pages/_app'
 import Authentication from './Modal/Authentication'
+import { useLogoutMutation } from '../graphql/generated/graphql'
+import { setAccessToken } from '../lib/accessToken'
+import Router from 'next/router'
 
 const links = [
   { name: 'Home', url: '/category/new-in' },
   { name: 'My Orders', url: '/' },
   { name: 'Settings', url: '/' },
-  { name: 'Sign Out', url: '/' },
 ]
 
 const Header = ({ firstName }) => {
@@ -19,6 +21,8 @@ const Header = ({ firstName }) => {
     cart: { displayCart },
     setCart,
   } = useContext(CartContext)
+
+  const [logout, { data, client }] = useLogoutMutation()
 
   return (
     <div className="d-flex flex-sm-column justify-content-between align-items-center header">
@@ -90,6 +94,22 @@ const Header = ({ firstName }) => {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <a
+                    onClick={async () => {
+                      try {
+                        await logout()
+                        setAccessToken('')
+                        Router.reload()
+                        await client.resetStore()
+                      } catch (err) {
+                        console.log('dasdadasdasdasd', err)
+                      }
+                    }}
+                  >
+                    Sign out
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

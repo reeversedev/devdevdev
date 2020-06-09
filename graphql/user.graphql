@@ -24,6 +24,10 @@ mutation login($email: String!, $password: String!) {
   }
 }
 
+mutation Logout {
+  logout
+}
+
 query profile {
   profile {
     id

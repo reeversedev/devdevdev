@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import { useProfileQuery } from '../../graphql/generated/graphql'
 import Router from 'next/router'
+import Loader from '../../components/Loader'
 
 const Profile = (props) => {
   const { data, loading, error } = useProfileQuery()
@@ -10,7 +11,7 @@ const Profile = (props) => {
     return (
       <Layout>
         <div className="d-flex justify-content-center align-items-center">
-          Loading...
+          <Loader />
         </div>
       </Layout>
     )

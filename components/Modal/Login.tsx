@@ -8,6 +8,7 @@ import {
 import { withApollo } from '../../lib/withApollo'
 import { setAccessToken } from '../../lib/accessToken'
 import Router from 'next/router'
+import Loader from '../Loader'
 
 const fields = [
   { name: 'email', label: 'Email', type: 'email' },
@@ -23,7 +24,7 @@ const Login = ({ onModalClose }) => {
   const [login, { loading, error, data }] = useLoginMutation()
 
   if (loading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
 
   return (

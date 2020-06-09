@@ -5,6 +5,7 @@ import SuggestedProducts from '../../../components/SuggestedProducts'
 
 import { useRouter } from 'next/router'
 import { products } from '../../../utils/products'
+import Loader from '../../../components/Loader'
 
 function ProductDetail({ product, category }) {
   const router = useRouter()
@@ -13,7 +14,7 @@ function ProductDetail({ product, category }) {
     return (
       <Layout>
         <div className="d-flex flex-wrap justify-content-center align-items-center">
-          <p>Loading...</p>
+          <Loader />
         </div>
       </Layout>
     )

@@ -29,6 +29,7 @@ export type User = {
 export type Mutation = {
   __typename?: 'Mutation'
   revokeRefreshTokensForUser: Scalars['Boolean']
+  logout: Scalars['Boolean']
   register: Scalars['Boolean']
   login: LoginResponse
 }
@@ -54,10 +55,6 @@ export type LoginResponse = {
   accessToken: Scalars['String']
   user: User
 }
-
-export type HelloQueryVariables = {}
-
-export type HelloQuery = { __typename?: 'Query' } & Pick<Query, 'hello'>
 
 export type RegisterMutationVariables = {
   firstName: Scalars['String']
@@ -88,6 +85,13 @@ export type LoginMutation = { __typename?: 'Mutation' } & {
     }
 }
 
+export type LogoutMutationVariables = {}
+
+export type LogoutMutation = { __typename?: 'Mutation' } & Pick<
+  Mutation,
+  'logout'
+>
+
 export type ProfileQueryVariables = {}
 
 export type ProfileQuery = { __typename?: 'Query' } & {
@@ -97,55 +101,6 @@ export type ProfileQuery = { __typename?: 'Query' } & {
   >
 }
 
-export const HelloDocument = gql`
-  query Hello {
-    hello
-  }
-`
-
-/**
- * __useHelloQuery__
- *
- * To run a query within a React component, call `useHelloQuery` and pass it any options that fit your needs.
- * When your component renders, `useHelloQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useHelloQuery({
- *   variables: {
- *   },
- * });
- */
-export function useHelloQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    HelloQuery,
-    HelloQueryVariables
-  >
-) {
-  return ApolloReactHooks.useQuery<HelloQuery, HelloQueryVariables>(
-    HelloDocument,
-    baseOptions
-  )
-}
-export function useHelloLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    HelloQuery,
-    HelloQueryVariables
-  >
-) {
-  return ApolloReactHooks.useLazyQuery<HelloQuery, HelloQueryVariables>(
-    HelloDocument,
-    baseOptions
-  )
-}
-export type HelloQueryHookResult = ReturnType<typeof useHelloQuery>
-export type HelloLazyQueryHookResult = ReturnType<typeof useHelloLazyQuery>
-export type HelloQueryResult = ApolloReactCommon.QueryResult<
-  HelloQuery,
-  HelloQueryVariables
->
 export const RegisterDocument = gql`
   mutation register(
     $firstName: String!
@@ -259,6 +214,51 @@ export type LoginMutationResult = ApolloReactCommon.MutationResult<
 export type LoginMutationOptions = ApolloReactCommon.BaseMutationOptions<
   LoginMutation,
   LoginMutationVariables
+>
+export const LogoutDocument = gql`
+  mutation Logout {
+    logout
+  }
+`
+export type LogoutMutationFn = ApolloReactCommon.MutationFunction<
+  LogoutMutation,
+  LogoutMutationVariables
+>
+
+/**
+ * __useLogoutMutation__
+ *
+ * To run a mutation, you first call `useLogoutMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useLogoutMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [logoutMutation, { data, loading, error }] = useLogoutMutation({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useLogoutMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    LogoutMutation,
+    LogoutMutationVariables
+  >
+) {
+  return ApolloReactHooks.useMutation<LogoutMutation, LogoutMutationVariables>(
+    LogoutDocument,
+    baseOptions
+  )
+}
+export type LogoutMutationHookResult = ReturnType<typeof useLogoutMutation>
+export type LogoutMutationResult = ApolloReactCommon.MutationResult<
+  LogoutMutation
+>
+export type LogoutMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  LogoutMutation,
+  LogoutMutationVariables
 >
 export const ProfileDocument = gql`
   query profile {
