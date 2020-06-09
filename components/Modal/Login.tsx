@@ -50,6 +50,7 @@ const Login = ({ onModalClose }) => {
             })
             if (response && response.data) {
               setAccessToken(response.data.login.accessToken)
+              onModalClose()
               Router.reload()
             }
           } catch (error) {
