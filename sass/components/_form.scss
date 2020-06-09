@@ -10,7 +10,7 @@
     input {
       display: block;
       height: 25px;
-      width: -webkit-fill-available;
+      width: 80%;
       padding: 10px;
     }
   }
@@ -30,6 +30,9 @@
   .form {
     .form-item {
       width: 100%;
+      input {
+        width: -webkit-fill-available;
+      }
     }
     button[type='submit'] {
       align-self: flex-end;
