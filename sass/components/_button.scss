@@ -234,21 +234,27 @@ button {
 
 a.transaction.buynow {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  height: 45px;
-  width: 200px;
-  border-radius: 10px;
-  background-color: rgb(56, 23, 56);
-  color: white;
-  font-size: 18px;
+  height: 55px;
+  width: 180px;
+  border-radius: 15px;
+  background-color: rgb(250, 217, 27);
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
   outline: none;
   margin: 1rem 0;
 
+  &::before {
+    content: '>';
+  }
+
   &:hover {
     background-color: purple;
+    color: white;
   }
 }
 

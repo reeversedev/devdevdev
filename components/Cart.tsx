@@ -25,37 +25,42 @@ const Cart = () => {
           ></span>
         </div>
       </div>
-      <div className="cart-items-container">
-        <div className="items">
-          {products.clothing.map((cloth, index) => {
-            return (
-              <div className="item" key={index}>
-                <div className="w-20">
-                  <img src={cloth.image} alt={cloth.name} loading="lazy" />
-                </div>
-                <div className="description w-100">
-                  <p className="brand">{cloth.brand}</p>
-                  <p className="name">{cloth.name}</p>
-                </div>
-                <div className="d-flex flex-column w-20 p-1">
-                  <p className="price">
-                    {cloth.priceCurrency} {cloth.price}
-                  </p>
-                  <div className="quantity">
-                    <div className="button-group">
-                      <button className="minus">-</button>
-                      <span>2</span>
-                      <button className="plus">+</button>
+      <div className="cart-items-container d-flex">
+        <div className="w-60">
+          <div className="items">
+            {products.clothing.map((cloth, index) => {
+              return (
+                <div className="item" key={index}>
+                  <div className="w-20">
+                    <img src={cloth.image} alt={cloth.name} loading="lazy" />
+                  </div>
+                  <div className="description w-100">
+                    <p className="brand">{cloth.brand}</p>
+                    <p className="name">{cloth.name}</p>
+                  </div>
+                  <div className="d-flex flex-column w-20 p-1">
+                    <p className="price">
+                      {cloth.priceCurrency} {cloth.price}
+                    </p>
+                    <div className="quantity">
+                      <div className="button-group">
+                        <button className="minus">-</button>
+                        <span>2</span>
+                        <button className="plus">+</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
+        </div>
+        <div className="w-40">
+          <div className="cart-detail"></div>
         </div>
       </div>
       <div className="cart-footer">
-        <a className="transaction buynow">Checkout</a>
+        <a className="transaction buynow text-uppercase">Checkout</a>
       </div>
     </div>
   )
