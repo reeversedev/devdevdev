@@ -12,7 +12,7 @@ const Carousel = ({ image }) => {
     <div className="d-flex align-items-center flex-column carousel">
       <div
         className="main-box"
-        style={{ backgroundImage: `url(${image})` }}
+        style={{ backgroundImage: `url(${image})`, borderRadius: '50px' }}
       ></div>
     </div>
   )

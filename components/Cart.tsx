@@ -26,22 +26,26 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart-items-container d-flex">
-        <div className="w-60">
+        <div className="w-60 w-sm-100">
           <div className="items">
             {products.clothing.map((cloth, index) => {
               return (
                 <div className="item" key={index}>
-                  <div className="w-20">
-                    <img src={cloth.image} alt={cloth.name} loading="lazy" />
-                  </div>
+                  <div
+                    className="w-20"
+                    style={{
+                      backgroundImage: `url('${cloth.image}')`,
+                      backgroundSize: '100% 100%',
+                      height: '150px',
+                      borderRadius: '15px',
+                    }}
+                  ></div>
                   <div className="description w-100">
                     <p className="brand">{cloth.brand}</p>
                     <p className="name">{cloth.name}</p>
                   </div>
                   <div className="d-flex flex-column w-20 p-1">
-                    <p className="price">
-                      {cloth.priceCurrency} {cloth.price}
-                    </p>
+                    <p className="price">&#8377; {cloth.price}</p>
                     <div className="quantity">
                       <div className="button-group">
                         <button className="minus">-</button>
@@ -55,7 +59,7 @@ const Cart = () => {
             })}
           </div>
         </div>
-        <div className="w-40">
+        <div className="w-40 w-sm-100">
           <div className="cart-detail"></div>
         </div>
       </div>
