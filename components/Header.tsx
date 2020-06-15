@@ -102,9 +102,7 @@ const Header = ({ firstName }) => {
                         setAccessToken('')
                         Router.reload()
                         await client.resetStore()
-                      } catch (err) {
-                        console.log('dasdadasdasdasd', err)
-                      }
+                      } catch (err) {}
                     }}
                   >
                     Sign out

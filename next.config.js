@@ -1,4 +1,4 @@
-const withSass = require('@zeit/next-sass');
+const withSass = require('@zeit/next-sass')
 
 module.exports = withSass({
   webpack(config, options) {
@@ -10,8 +10,11 @@ module.exports = withSass({
           limit: 100000,
         },
       },
-    });
+    })
 
-    return config;
+    return config
   },
-});
+  env: {
+    BACKEND: 'http://ec2-13-234-240-74.ap-south-1.compute.amazonaws.com:4000',
+  },
+})
