@@ -64,7 +64,7 @@ export function withApollo(PageComponent: any, { ssr = true } = {}) {
           const cookies = cookie.parse(req.headers.cookie)
           if (cookies.jid) {
             const response = await fetch(
-              'http://localhost:4000/refresh_token',
+              'http://ec2-13-234-240-74.ap-south-1.compute.amazonaws.com:4000/refresh_token',
               {
                 method: 'POST',
                 credentials: 'include',
@@ -169,7 +169,8 @@ function initApolloClient(initState: any, serverAccessToken?: string) {
  */
 function createApolloClient(initialState = {}, serverAccessToken?: string) {
   const httpLink = new HttpLink({
-    uri: 'http://localhost:4000/graphql',
+    uri:
+      'http://ec2-13-234-240-74.ap-south-1.compute.amazonaws.com:4000/graphql',
     credentials: 'include',
     fetch,
   })
@@ -195,10 +196,13 @@ function createApolloClient(initialState = {}, serverAccessToken?: string) {
       }
     },
     fetchAccessToken: () => {
-      return fetch('http://localhost:4000/refresh_token', {
-        method: 'POST',
-        credentials: 'include',
-      })
+      return fetch(
+        'http://ec2-13-234-240-74.ap-south-1.compute.amazonaws.com:4000/refresh_token',
+        {
+          method: 'POST',
+          credentials: 'include',
+        }
+      )
     },
     handleFetch: (accessToken) => {
       setAccessToken(accessToken)

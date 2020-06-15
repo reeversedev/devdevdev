@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'http://localhost:4000/graphql'
+schema: 'http://ec2-13-234-240-74.ap-south-1.compute.amazonaws.com:4000/graphql'
 documents: './graphql/*.graphql'
 generates:
   ./graphql/generated/graphql.tsx:
