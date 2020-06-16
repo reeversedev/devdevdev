@@ -26,7 +26,7 @@ const Cart = () => {
         </div>
       </div>
       <div className="cart-items-container d-flex">
-        <div className="items">
+        <div className="items mb-1">
           {products.clothing.map((cloth, index) => {
             return (
               <div className="item align-items-center" key={index}>
@@ -67,12 +67,29 @@ const Cart = () => {
           })}
         </div>
       </div>
-      <div className="cart-footer">
-        {/* {products.clothing.reduce(
-          (acc, { price }, i) => acc + parseInt(price) * 2,
-          0
-        )} */}
-        <a className="transaction buynow text-uppercase">Checkout </a>
+      <div
+        className={
+          view !== 'zero'
+            ? 'cart-footer d-flex justify-content-between align-items-center'
+            : 'd-none'
+        }
+      >
+        <div className="mx-3">
+          <p className="total-price mb-0">
+            Total:{' '}
+            <span className="font-weight-600">
+              &#8377;
+              {products.clothing
+                .reduce((acc, { price }, i) => acc + parseInt(price) * 2, 0)
+                .toLocaleString('en')}
+            </span>
+          </p>
+          <p className="mt-0 extra-info">
+            (Inclusive of all taxes + Shipping charges)
+          </p>
+        </div>
+
+        <a className="transaction buynow text-uppercase m-1">Checkout </a>
       </div>
     </div>
   )

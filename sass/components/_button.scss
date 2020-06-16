@@ -246,7 +246,6 @@ a.transaction.buynow {
   transition: all ease-in-out 0.5s;
   cursor: pointer;
   outline: none;
-  margin: 1rem 0;
 
   &::before {
     content: '>';
@@ -309,7 +308,7 @@ a.transaction.add-to-cart {
 @media screen and (max-width: 425px) {
   a.transaction.buynow,
   a.transaction.add-to-cart {
-    width: 150px;
+    width: 120px;
   }
 }
 

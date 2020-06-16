@@ -137,13 +137,16 @@
     }
     .cart-footer {
       position: fixed;
-      display: flex;
-      justify-content: flex-end;
       bottom: 0rem;
       right: 0rem;
       width: 100%;
-      padding: 0 40px;
       background: #fff;
+      .total-price {
+        font-size: 20px;
+      }
+      .extra-info {
+        font-size: 12px;
+      }
     }
   }
 }
