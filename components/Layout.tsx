@@ -21,21 +21,22 @@ const buttons = [
 ]
 
 const Layout = (props) => {
-  const { data, loading, error } = useProfileQuery()
+  // const { data, loading, error } = useProfileQuery()
   const [profile, setProfile] = useState(null)
   const {
     cart: { displayCart, view },
   } = useContext(CartContext)
 
-  useEffect(() => {
-    if (data) {
-      return setProfile(data.profile)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (data) {
+  //     return setProfile(data.profile)
+  //   }
+  //   console.log('data', data)
+  // }, [])
 
   return (
     <div className="container">
-      <Header {...profile} />
+      <Header />
       {props.children}
       {displayCart && (
         <div className={`${view}-open cart-container`}>

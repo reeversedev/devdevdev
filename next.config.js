@@ -15,7 +15,7 @@ module.exports = withSass({
     return config
   },
   env: {
-    // BACKEND: 'http://ec2-13-234-240-74.ap-south-1.compute.amazonaws.com:4000',
-    BACKEND: 'http://localhost:4000',
+    BACKEND: 'http://ec2-13-234-240-74.ap-south-1.compute.amazonaws.com:4000',
+    // BACKEND: 'http://localhost:4000',
   },
 })

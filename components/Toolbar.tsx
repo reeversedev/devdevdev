@@ -1,4 +1,4 @@
-import ToolbarButton from './Button/ToolbarButton'
+// import ToolbarButton from './Button/ToolbarButton'
 import { useContext } from 'react'
 import { CartContext } from '../pages/_app'
 
@@ -9,9 +9,10 @@ const Toolbar = ({ buttons }) => {
   } = useContext(CartContext)
   return (
     <div className="d-flex justify-content-between align-items-center toolbar">
-      {buttons.map((button, index) => (
+      {/* {buttons.map((button, index) => (
         <ToolbarButton key={index} {...button} />
-      ))}
+      ))} */}
+      <p>Toolbar button issue here</p>
     </div>
   )
 }

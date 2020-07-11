@@ -15,7 +15,7 @@ const links = [
   { name: 'Settings', url: '/' },
 ]
 
-const Header = ({ firstName }) => {
+const Header = ({ firstName = 'Prateek' }) => {
   const [loginForm, setLoginForm] = useState(false)
   const {
     cart: { displayCart },
