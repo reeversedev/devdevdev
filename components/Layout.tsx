@@ -8,6 +8,7 @@ import { useContext, useState, useEffect } from 'react'
 import { CartContext } from '../pages/_app'
 import { withApollo } from '../lib/withApollo'
 import { useProfileQuery } from '../graphql/generated/graphql'
+import Loader from './Loader'
 
 const buttons = [
   {
@@ -21,22 +22,22 @@ const buttons = [
 ]
 
 const Layout = (props) => {
-  // const { data, loading, error } = useProfileQuery()
-  const [profile, setProfile] = useState(null)
+  const { data, loading, error } = useProfileQuery()
   const {
     cart: { displayCart, view },
   } = useContext(CartContext)
 
-  // useEffect(() => {
-  //   if (data) {
-  //     return setProfile(data.profile)
-  //   }
-  //   console.log('data', data)
-  // }, [])
+  if (error) {
+    localStorage.setItem('status', error.message)
+  }
+
+  if (loading) {
+    return <Loader />
+  }
 
   return (
     <div className="container">
-      <Header />
+      <Header {...(data && data.profile)} />
       {props.children}
       {displayCart && (
         <div className={`${view}-open cart-container`}>
@@ -50,4 +51,4 @@ const Layout = (props) => {
   )
 }
 
-export default withApollo(Layout)
+export default Layout
