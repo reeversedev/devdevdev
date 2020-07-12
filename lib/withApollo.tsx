@@ -220,13 +220,13 @@ function createApolloClient(initialState = {}, serverAccessToken?: string) {
   })
 
   const errorLink = onError(({ graphQLErrors, networkError }) => {
-    // console.log(graphQLErrors)
-    // console.log(networkError)
+    console.log(graphQLErrors)
+    console.log(networkError)
   })
 
   return new ApolloClient({
     ssrMode: typeof window === 'undefined', // Disables forceFetch on the server (so queries are only run once)
-    link: ApolloLink.from([refreshLink, authLink, httpLink]),
+    link: ApolloLink.from([refreshLink, authLink, errorLink, httpLink]),
     cache: new InMemoryCache().restore(initialState),
   })
 }
