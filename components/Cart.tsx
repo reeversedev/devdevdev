@@ -8,6 +8,7 @@ const Cart = () => {
     cart: { view },
     setCart,
   } = useContext(CartContext)
+
   return (
     <div className="cart">
       <div className="cart-header d-flex justify-content-between align-items-center">

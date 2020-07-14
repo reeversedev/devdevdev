@@ -4,7 +4,7 @@ import { useProfileQuery } from '../../graphql/generated/graphql'
 import Router from 'next/router'
 import Loader from '../../components/Loader'
 
-const Profile = (props) => {
+const Profile = () => {
   const { data, loading, error } = useProfileQuery()
 
   if (loading) {
@@ -26,10 +26,11 @@ const Profile = (props) => {
   } = data
   return (
     <Layout>
-      <div className="d-flex align-items-center p-4">
+      <div className="d-flex flex-column align-items-center p-4">
         <h1 className="mt-4">
-          Hey {firstName} {lastName}!
+          Hey, {firstName} {lastName}!
         </h1>{' '}
+        <p>{email}</p>
       </div>
     </Layout>
   )
