@@ -28,8 +28,9 @@ const Authentication: React.FC<IAuthenticationFormProps> = ({
                 style={{
                   backgroundImage: `url('/logo.svg')`,
                   backgroundRepeat: 'no-repeat',
-                  height: '200px',
+                  height: '150px',
                   backgroundSize: 'contain',
+                  backgroundPosition: 'center',
                 }}
               ></div>
             </div>
