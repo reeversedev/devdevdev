@@ -77,7 +77,7 @@ export function withApollo(PageComponent: any, { ssr = true } = {}) {
             serverAccessToken = data.accessToken
           }
         } catch (err) {
-          console.log(err)
+          console.log(err, 'err')
         }
       }
 
@@ -169,12 +169,12 @@ function initApolloClient(initState: any, serverAccessToken?: string) {
  */
 function createApolloClient(initialState = {}, serverAccessToken?: string) {
   const httpLink = new HttpLink({
-    uri: `${process.env.BACKEND}/graphql`,
+    uri: 'http://localhost:4000/graphql',
     credentials: 'include',
     fetch,
   })
 
-  const refreshLink: any = new TokenRefreshLink({
+  const refreshLink = new TokenRefreshLink({
     accessTokenField: 'accessToken',
     isTokenValidOrUndefined: () => {
       const token = getAccessToken()
@@ -195,7 +195,7 @@ function createApolloClient(initialState = {}, serverAccessToken?: string) {
       }
     },
     fetchAccessToken: () => {
-      return fetch(`${process.env.BACKEND}/refresh_token`, {
+      return fetch('http://localhost:4000/refresh_token', {
         method: 'POST',
         credentials: 'include',
       })
@@ -214,7 +214,7 @@ function createApolloClient(initialState = {}, serverAccessToken?: string) {
     return {
       headers: {
         ...headers,
-        authorization: token ? `Bearer ${token}` : '',
+        authorization: token ? `bearer ${token}` : '',
       },
     }
   })
@@ -226,7 +226,7 @@ function createApolloClient(initialState = {}, serverAccessToken?: string) {
 
   return new ApolloClient({
     ssrMode: typeof window === 'undefined', // Disables forceFetch on the server (so queries are only run once)
-    link: ApolloLink.from([refreshLink, authLink, errorLink, httpLink]),
+    link: ApolloLink.from([refreshLink as any, authLink, errorLink, httpLink]),
     cache: new InMemoryCache().restore(initialState),
   })
 }
