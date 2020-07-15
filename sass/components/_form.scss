@@ -21,8 +21,11 @@
     color: #fff;
     font-size: 18px;
     font-weight: 500;
-    padding: 15px 20px;
+    padding: 10px 20px;
     cursor: pointer;
+  }
+  button[disabled] {
+    background-color: gray;
   }
 }
 

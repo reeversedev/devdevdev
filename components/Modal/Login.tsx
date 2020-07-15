@@ -1,14 +1,12 @@
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 import {
   useLoginMutation,
-  LoginDocument,
   ProfileDocument,
   ProfileQuery,
 } from '../../graphql/generated/graphql'
 import { withApollo } from '../../lib/withApollo'
 import { setAccessToken } from '../../lib/accessToken'
-import Router from 'next/router'
-import Loader from '../Loader'
+import Spinner from '../Spinner'
 
 const fields = [
   { name: 'email', label: 'Email', type: 'email' },
@@ -23,41 +21,37 @@ const Login = ({ onModalClose }) => {
 
   const [login, { loading, error, data }] = useLoginMutation()
 
-  if (loading) {
-    return <Loader />
+  const onSubmit = async (e: FormEvent) => {
+    try {
+      e.preventDefault()
+      const response = await login({
+        variables: state,
+        update: (store, { data }) => {
+          if (!data) {
+            return null
+          }
+
+          store.writeQuery<ProfileQuery>({
+            query: ProfileDocument,
+            data: {
+              profile: data.login.profile,
+            },
+          })
+        },
+      })
+      if (response && response.data) {
+        setAccessToken(response.data.login.accessToken)
+        onModalClose()
+        // Router.reload()
+      }
+    } catch (error) {
+      return onModalClose()
+    }
   }
 
   return (
     <div className="form">
-      <form
-        onSubmit={async (e) => {
-          try {
-            e.preventDefault()
-            const response = await login({
-              variables: state,
-              update: (store, { data }) => {
-                if (!data) {
-                  return null
-                }
-
-                store.writeQuery<ProfileQuery>({
-                  query: ProfileDocument,
-                  data: {
-                    profile: data.login.profile,
-                  },
-                })
-              },
-            })
-            if (response && response.data) {
-              setAccessToken(response.data.login.accessToken)
-              onModalClose()
-              // Router.reload()
-            }
-          } catch (error) {
-            return onModalClose()
-          }
-        }}
-      >
+      <form onSubmit={onSubmit}>
         <div className="d-flex flex-sm-column flex-wrap justify-content-between">
           {fields.map(({ label, name, type }, index) => (
             <div className="form-item" key={index}>
@@ -73,9 +67,15 @@ const Login = ({ onModalClose }) => {
             error.graphQLErrors.map((err) => {
               return <span style={{ color: 'red' }}>{err.message}</span>
             })}
-          <button type="submit" disabled={loading} className="d-flex">
-            Login
-          </button>
+          <div className="d-flex justify-content-end w-100 mx-2">
+            <button
+              type="submit"
+              disabled={loading}
+              className="d-flex align-items-center justify-content-between"
+            >
+              {loading && <Spinner />} <span className="mx-2">Login</span>
+            </button>
+          </div>
         </div>
       </form>
     </div>
