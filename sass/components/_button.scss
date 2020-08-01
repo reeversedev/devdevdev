@@ -241,15 +241,11 @@ a.transaction.buynow {
   border-radius: 15px;
   background-color: rgb(250, 217, 27);
   color: black;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   transition: all ease-in-out 0.5s;
   cursor: pointer;
   outline: none;
-
-  &::before {
-    content: '>';
-  }
 
   &:hover {
     background-color: purple;
