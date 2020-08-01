@@ -60,6 +60,7 @@ const Login = ({ onModalClose }) => {
                 type={type}
                 name={name}
                 onChange={(e) => setState({ ...state, [name]: e.target.value })}
+                required
               />
             </div>
           ))}
