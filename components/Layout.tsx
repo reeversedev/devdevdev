@@ -5,7 +5,7 @@ import Cart from './Cart'
 import '../sass/pages/_app.scss'
 
 import { useContext, useState, useEffect } from 'react'
-import { CartContext } from '../pages/_app'
+import { UserContext } from '../pages/_app'
 import { withApollo } from '../lib/withApollo'
 import { useProfileQuery } from '../graphql/generated/graphql'
 
@@ -25,14 +25,13 @@ const Layout = (props) => {
   const [profile, setProfile] = useState(null)
   const {
     cart: { displayCart, view },
-  } = useContext(CartContext)
+  } = useContext(UserContext)
 
   if (error) {
     localStorage.setItem('status', error.message)
   }
 
   useEffect(() => {
-    console.log(data, 'data')
     if (data !== undefined) {
       setProfile(data.profile)
     }

@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { products } from '../utils/products'
 import { fullviewCart, openCart, closeCart } from '../utils/actions'
-import { CartContext } from '../pages/_app'
+import { UserContext } from '../pages/_app'
 
 const Cart = () => {
   const {
     cart: { view },
     setCart,
-  } = useContext(CartContext)
+  } = useContext(UserContext)
 
   return (
     <div className="cart">

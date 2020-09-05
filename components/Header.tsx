@@ -3,13 +3,9 @@ import Link from 'next/link'
 
 import { useContext, useState, useEffect } from 'react'
 import { openCart, closeCart } from '../utils/actions'
-import { CartContext } from '../pages/_app'
+import { UserContext } from '../pages/_app'
 import Authentication from './Modal/Authentication'
-import {
-  useLogoutMutation,
-  ProfileQuery,
-  User,
-} from '../graphql/generated/graphql'
+import { useLogoutMutation, User } from '../graphql/generated/graphql'
 import { setAccessToken } from '../lib/accessToken'
 
 const links = [
@@ -20,25 +16,22 @@ const links = [
 
 const Header: React.FC<User> = (profile) => {
   const [loginForm, setLoginForm] = useState(false)
-  const { firstName, lastName } = profile
+  const [profileInfo, setProfileInfo] = useState(profile)
+  const { firstName, lastName } = profileInfo
   const {
     cart: { displayCart },
     setCart,
-  } = useContext(CartContext)
+  } = useContext(UserContext)
 
-  const [logoutOperation, { client, data: logoutData }] = useLogoutMutation()
+  const [logoutOperation, { client }] = useLogoutMutation()
 
   const logoutFunction = async () => {
     try {
-      await client.resetStore()
       await logoutOperation()
       setAccessToken('')
+      await client.resetStore()
     } catch (err) {}
   }
-
-  useEffect(() => {
-    console.log('something changed in store', client.store)
-  }, [client.store])
 
   return (
     <div className="d-flex justify-content-between align-items-center header">

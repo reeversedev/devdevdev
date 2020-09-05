@@ -1,11 +1,10 @@
-import { useReducer, useEffect, createContext } from 'react'
-import Router, { useRouter } from 'next/router'
+import { useReducer, createContext } from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
 
 import Layout from '../components/Layout'
 import { withApollo } from '../lib/withApollo'
 
-type CartContextType = {
+type UserContextType = {
   cart: {
     displayCart: Boolean
     view: String
@@ -13,7 +12,7 @@ type CartContextType = {
   setCart: any
 }
 
-export const CartContext = createContext<CartContextType>({
+export const UserContext = createContext<UserContextType>({
   cart: {
     displayCart: true,
     view: 'zero',
@@ -23,35 +22,28 @@ export const CartContext = createContext<CartContextType>({
 
 const initialState = { displayCart: true, view: 'zero' }
 
-function reducer(state, action) {
+function reducer(state = initialState, action) {
   switch (action.type) {
     case 'OPEN_CART':
-      return { ...initialState, displayCart: true, view: 'half' }
+      return { ...state, displayCart: true, view: 'half' }
     case 'CLOSE_CART':
-      return { ...initialState, displayCart: true, view: 'zero' }
+      return { ...state, displayCart: true, view: 'zero' }
     case 'FULL_VIEW':
-      return { ...initialState, displayCart: true, view: 'full' }
+      return { ...state, displayCart: true, view: 'full' }
     default:
-      return initialState
+      return state
   }
 }
 
 function MyApp({ Component, pageProps, apolloClient }) {
   const [cart, setCart] = useReducer(reducer, initialState)
-
-  useEffect(() => {
-    const { pathname } = Router
-    if (pathname == '/') {
-      Router.push('/category/new-in')
-    }
-  })
   return (
     <ApolloProvider client={apolloClient}>
-      <CartContext.Provider value={{ cart, setCart }}>
+      <UserContext.Provider value={{ cart, setCart }}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </CartContext.Provider>
+      </UserContext.Provider>
     </ApolloProvider>
   )
 }
