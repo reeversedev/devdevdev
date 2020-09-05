@@ -12,7 +12,7 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="cart-header d-flex justify-content-between align-items-center">
-        <h1>My Cart</h1>
+        <h1>Cart</h1>
         <div className="d-flex align-items-center">
           <span
             className="cursor-pointer cart-icon cart-size"

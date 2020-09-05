@@ -4,9 +4,6 @@ export const exploreItems = [
   { name: 'New In', icon: '/flash.svg', slug: 'new-in' },
   { name: 'Clothing', icon: '/tshirt.svg', slug: 'clothing' },
   { name: 'Shoes', icon: '/shoes.svg', slug: 'shoes' },
-  { name: 'Accessories', icon: '/earrings.svg', slug: 'accessories' },
-  { name: 'Activewear', icon: '/activewear.svg', slug: 'active-wear' },
-  { name: 'Inspiration', icon: '/inspiration.svg', slug: 'inspiration' },
 ]
 
 const Explore = () => {

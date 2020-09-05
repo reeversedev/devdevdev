@@ -1,13 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { openCart, closeCart } from '../utils/actions'
 import { CartContext } from '../pages/_app'
 import Authentication from './Modal/Authentication'
-import { useLogoutMutation } from '../graphql/generated/graphql'
+import {
+  useLogoutMutation,
+  ProfileQuery,
+  User,
+} from '../graphql/generated/graphql'
 import { setAccessToken } from '../lib/accessToken'
-import Router from 'next/router'
 
 const links = [
   { name: 'Home', url: '/category/new-in' },
@@ -15,33 +18,39 @@ const links = [
   { name: 'Settings', url: '/account/profile' },
 ]
 
-const Header = ({ firstName, lastName }) => {
+const Header: React.FC<User> = (profile) => {
   const [loginForm, setLoginForm] = useState(false)
+  const { firstName, lastName } = profile
   const {
     cart: { displayCart },
     setCart,
   } = useContext(CartContext)
 
-  const [logout, { data, client }] = useLogoutMutation()
+  const [logoutOperation, { client, data: logoutData }] = useLogoutMutation()
 
   const logoutFunction = async () => {
     try {
-      await logout()
-      setAccessToken('')
-      Router.reload()
       await client.resetStore()
+      await logoutOperation()
+      setAccessToken('')
     } catch (err) {}
   }
 
+  useEffect(() => {
+    console.log('something changed in store', client.store)
+  }, [client.store])
+
   return (
-    <div className="d-flex flex-sm-column justify-content-between align-items-center header">
+    <div className="d-flex justify-content-between align-items-center header">
       <Head>
         <title>dev dev dev</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="logo d-sm-none">
+      <div className="logo">
         <Link href="/category/new-in">
-          <img src="/logo.svg" />
+          <a>
+            <img src="/logo.svg" />
+          </a>
         </Link>
       </div>
 
@@ -68,7 +77,7 @@ const Header = ({ firstName, lastName }) => {
         </div>
       )}
       {!firstName && (
-        <div className="d-flex w-sm-100">
+        <div className="d-flex">
           <a
             className="cursor-pointer d-flex justify-content-between font-weight-700"
             onClick={() => setLoginForm(!loginForm)}
@@ -84,10 +93,9 @@ const Header = ({ firstName, lastName }) => {
 
       {/* Active when login is implemented */}
       {firstName && (
-        <div className="d-flex w-sm-100">
+        <div className="d-flex">
           <div className="hello-name">
             <span>
-              Hey!{' '}
               <b>
                 {firstName} {lastName}
               </b>

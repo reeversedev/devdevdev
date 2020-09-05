@@ -5,6 +5,7 @@ import Toolbar from '../../components/Toolbar'
 import AllProducts from '../../components/AllProducts'
 import Explore, { exploreItems } from '../../components/Explore'
 import Newin from '../../components/Newin'
+import { capitalize } from '../../utils/text-util'
 
 const Category = () => {
   const router = useRouter()
@@ -21,8 +22,8 @@ const Category = () => {
           <div className="category">
             <div className="d-flex flex-sm-column align-items-center align-items-sm-start justify-content-between sticky-toolbar d-sm-none">
               <div className="d-flex align-items-center">
-                <img src={icon} alt="icon" height="35" />{' '}
-                <h1 className="mx-1">{name}</h1>
+                <img src={icon} alt="icon" height="35" /> {/*@ts-ignore*/}
+                <h1 className="mx-1">{capitalize(slug)}</h1>
               </div>
               <Toolbar buttons={['sort']} />
             </div>
