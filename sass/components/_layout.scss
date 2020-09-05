@@ -289,11 +289,6 @@
 }
 
 // colored backgrounds
-.cyan-background {
-  background-color: rgb(170, 228, 255);
-  justify-content: center;
-  align-items: center;
-}
 
 .purple-background {
   background-color: rgb(250, 195, 250);
@@ -331,6 +326,9 @@
 
 .position-relative {
   position: relative;
+}
+.position-absolute {
+  position: absolute;
 }
 
 .bg-purple {
