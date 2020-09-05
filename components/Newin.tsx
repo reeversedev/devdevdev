@@ -1,13 +1,13 @@
 import React from 'react'
 import BannerCard from './BannerCard'
 
-const imageStyle = {
+const horizontalImageStyle = {
   height: '100%',
   width: '100%',
-  maxWidth: '150px',
-  right: 0,
+  maxWidth: '160px',
+  right: 10,
   backgroundSize: 'cover',
-  backgroundPosition: '10px 0px',
+  backgroundPosition: '0px 0px',
   borderRadius: '15px',
   backgroundRepeat: 'no-repeat',
 }
@@ -15,7 +15,7 @@ const imageStyle = {
 const Newin = () => {
   return (
     <div className="d-flex flex-md-column flex-sm-column highlights">
-      <div className="w-50 w-md-100 w-sm-100 p-1 p-sm-0">
+      <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0">
         <section className="vertical-section">
           <BannerCard
             title={{
@@ -42,9 +42,9 @@ const Newin = () => {
             backgroundColor="#fac3fa"
             textPosition="start"
             imageStyle={{
-              ...imageStyle,
-              backgroundImage:
-                'url("https://images.asos-media.com/products/asos-design-petite-hybrid-faux-fur-panelled-puffer-jacket-in-lilac/12917591-1-lilac?$L$&wid=168&fit=constrain")',
+              ...horizontalImageStyle,
+              backgroundPosition: '-15px 0px',
+              backgroundImage: 'url("/purple-jacket.png")',
             }}
           />
         </section>
@@ -58,7 +58,7 @@ const Newin = () => {
         </section>
       </div>
 
-      <div className="w-50 w-md-100 w-sm-100 p-1 p-sm-0">
+      <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0">
         <div className="d-flex flex-column flex-sm-column">
           <section className="horizontal-section">
             <div className="category-vertical-card adidas">
@@ -84,17 +84,16 @@ const Newin = () => {
               backgroundColor="#f3d37a"
               textPosition="end"
               imageStyle={{
-                ...imageStyle,
+                ...horizontalImageStyle,
                 left: 0,
                 backgroundPosition: '0px 0px',
                 borderRadius: '15px 0 0 15px',
-                backgroundImage:
-                  "url('https://images.asos-media.com/products/asos-design-wool-mix-western-jacket-in-yellow/13320467-1-yellow?$XXL$&wid=513&fit=constrain')",
+                backgroundImage: "url('/yellow-jacket.png')",
               }}
             />
             <BannerCard
               title={{
-                content: 'New-Season Textures',
+                content: 'New-Season',
                 size: '22',
                 weight: '700',
               }}
@@ -107,11 +106,10 @@ const Newin = () => {
               backgroundColor="#ffc0cb"
               textPosition="start"
               imageStyle={{
-                ...imageStyle,
+                ...horizontalImageStyle,
                 backgroundPosition: '0px 0px',
                 borderRadius: '0 15px 15px 0',
-                backgroundImage:
-                  "url('https://images.asos-media.com/products/free-people-honey-tee/14565141-1-pink?$XXL$&wid=513&fit=constrain')",
+                backgroundImage: "url('/pink-dress.png')",
               }}
             />
           </section>
