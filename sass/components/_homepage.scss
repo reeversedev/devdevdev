@@ -59,22 +59,12 @@
     }
     .category-vertical-card {
       height: 100%;
-      width: 250px;
+      width: 100%;
+      gap: 5%;
       border-radius: 15px;
       display: flex;
       align-items: flex-end;
-      font-size: 12px;
-      font-weight: 600;
-      text-align: center;
       background-color: rgb(226, 224, 224);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: 100% 100%;
-
-      p {
-        margin: 0 auto;
-        padding: 30px;
-      }
     }
 
     .adidas {

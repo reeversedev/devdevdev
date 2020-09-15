@@ -61,12 +61,48 @@ const Newin = () => {
       <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0">
         <div className="d-flex flex-column flex-sm-column">
           <section className="horizontal-section">
-            <div className="category-vertical-card adidas">
+            {/* <div className="category-vertical-card adidas">
               <p>Adidas Originals LXCON 94 trainers in white</p>
             </div>
             <div className="category-vertical-card sneakers">
               <p>Lightweight super skinny joggers in light khaki</p>
-            </div>
+            </div> */}
+            <BannerCard
+              title={{
+                content: 'Adidas Originals LXCON 94 trainers in white',
+                size: '14',
+                weight: '700',
+              }}
+              type="vertical"
+              backgroundColor="#f3d37a"
+              textPosition="end"
+              imageStyle={{
+                ...horizontalImageStyle,
+                // left: 0,
+                top: 0,
+                // backgroundPosition: '0px -150px',
+                borderRadius: '15px 0 0 15px',
+                backgroundImage: "url('/yellow-jacket.png')",
+              }}
+            />
+            <BannerCard
+              title={{
+                content: 'Adidas Originals LXCON 94 trainers in white',
+                size: '14',
+                weight: '700',
+              }}
+              type="vertical"
+              backgroundColor="#f3d37a"
+              textPosition="end"
+              imageStyle={{
+                ...horizontalImageStyle,
+                // left: 0,
+                top: 0,
+                // backgroundPosition: '0px -150px',
+                borderRadius: '15px 0 0 15px',
+                backgroundImage: "url('/yellow-jacket.png')",
+              }}
+            />
           </section>
           <section className="vertical-section my-2">
             <BannerCard

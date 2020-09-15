@@ -1,9 +1,6 @@
 .explore {
   position: fixed;
   top: 5rem;
-  h1 {
-    font-size: 2rem;
-  }
   li {
     a {
       text-decoration: none;
@@ -15,6 +12,12 @@
       font-size: 14px;
       font-weight: 300;
     }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .explore {
+    top: 5.5rem;
   }
 }
 

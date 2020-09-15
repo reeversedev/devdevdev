@@ -75,7 +75,7 @@ const Header: React.FC<User> = (profile) => {
             className="cursor-pointer d-flex justify-content-between font-weight-700"
             onClick={() => setLoginForm(!loginForm)}
           >
-            <img src="/user.svg" height="20" alt="user" className="mr-2" />{' '}
+            <img src="/user.svg" height="20" alt="user" className="mr-2" />
             Login
           </a>
           {loginForm && (
