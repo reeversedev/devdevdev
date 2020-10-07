@@ -8,6 +8,7 @@ type Text = {
   content: string
   size: '12' | '14' | '16' | '18' | '20' | '22'
   weight: '200' | '300' | '400' | '600' | '700' | '800'
+  backDropFilter?: string
 }
 
 interface IBannerCardProps {
@@ -36,11 +37,14 @@ const BannerCard: React.FC<IBannerCardProps> = (props) => {
       }}
     >
       <div
-        className={`d-flex flex-column justify-content-center align-items-${textPosition} w-100 m-2`}
+        className={`d-flex flex-column justify-content-center align-items-${textPosition} w-100 ${
+          type === 'horizontal' ? 'p-2' : 'p-1'
+        }`}
       >
         {title && (
           <p
             className={`font-size-${title.size} font-weight-${title.weight} m-0`}
+            style={{ backdropFilter: title.backDropFilter, zIndex: 1 }}
           >
             {title.content}
           </p>

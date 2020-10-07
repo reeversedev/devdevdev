@@ -16,6 +16,7 @@
     "apollo-link-context": "^1.0.20",
     "apollo-link-token-refresh": "^0.3.1",
     "apollo-server-core": "^2.14.2",
+    "apollo-server-micro": "^2.18.1",
     "cookie": "^0.4.1",
     "graphql": "^15.0.0",
     "isomorphic-unfetch": "^3.0.0",

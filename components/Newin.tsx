@@ -49,24 +49,53 @@ const Newin = () => {
           />
         </section>
         <section className="horizontal-section my-2">
-          <div className="category-vertical-card scarves">
-            <p>Blanket scarf in orange and black brushed check with tassels</p>
-          </div>
-          <div className="category-vertical-card adidas">
-            <p>Adidas Originals LXCON 94 trainers in white</p>
-          </div>
+          <BannerCard
+            title={{
+              content:
+                'Blanket scarf in orange and black brushed check with tassels',
+              size: '14',
+              weight: '700',
+              backDropFilter: 'blur(5px)',
+            }}
+            type="vertical"
+            backgroundColor="#f3d37a"
+            textPosition="end"
+            imageStyle={{
+              ...horizontalImageStyle,
+              left: 0,
+              top: 0,
+              maxWidth: '100%',
+              borderRadius: '15px 15px 0 15px',
+              backgroundImage:
+                "url('https://images.asos-media.com/products/asos-design-blanket-scarf-in-orange-and-black-brushed-check-with-tassels/13427903-1-orange?$XXL$&wid=513&fit=constrain')",
+            }}
+          />
+          <BannerCard
+            title={{
+              content: 'Super skinny Jogers',
+              size: '14',
+              weight: '700',
+              backDropFilter: 'blur(5px)',
+            }}
+            type="vertical"
+            backgroundColor="#f3d37a"
+            textPosition="center"
+            imageStyle={{
+              ...horizontalImageStyle,
+              left: 0,
+              top: 0,
+              maxWidth: '100%',
+              borderRadius: '15px 15px 0 15px',
+              backgroundImage:
+                "url('https://images.asos-media.com/products/asos-design-lightweight-super-skinny-joggers-in-light-khaki/13187225-1-mermaid?$XXL$&wid=513&fit=constrain')",
+            }}
+          />
         </section>
       </div>
 
       <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0">
         <div className="d-flex flex-column flex-sm-column">
           <section className="horizontal-section">
-            {/* <div className="category-vertical-card adidas">
-              <p>Adidas Originals LXCON 94 trainers in white</p>
-            </div>
-            <div className="category-vertical-card sneakers">
-              <p>Lightweight super skinny joggers in light khaki</p>
-            </div> */}
             <BannerCard
               title={{
                 content: 'Adidas Originals LXCON 94 trainers in white',
@@ -75,31 +104,31 @@ const Newin = () => {
               }}
               type="vertical"
               backgroundColor="#f3d37a"
-              textPosition="end"
+              textPosition="center"
               imageStyle={{
                 ...horizontalImageStyle,
-                // left: 0,
+                maxWidth: '100%',
+                left: 0,
                 top: 0,
-                // backgroundPosition: '0px -150px',
-                borderRadius: '15px 0 0 15px',
-                backgroundImage: "url('/yellow-jacket.png')",
+                borderRadius: '15px 15px 0 15px',
+                backgroundImage:
+                  "url('https://images.asos-media.com/products/adidas-originals-lxcon-94-trainers-in-white/12624921-1-white?$XXL$&wid=513&fit=constrain')",
               }}
             />
             <BannerCard
               title={{
-                content: 'Adidas Originals LXCON 94 trainers in white',
+                content: 'Sick yellow bomber Jacket',
                 size: '14',
                 weight: '700',
               }}
               type="vertical"
               backgroundColor="#f3d37a"
-              textPosition="end"
+              textPosition="center"
               imageStyle={{
                 ...horizontalImageStyle,
-                // left: 0,
+                right: 0,
                 top: 0,
-                // backgroundPosition: '0px -150px',
-                borderRadius: '15px 0 0 15px',
+                borderRadius: '15px 15px 0 15px',
                 backgroundImage: "url('/yellow-jacket.png')",
               }}
             />
@@ -113,7 +142,7 @@ const Newin = () => {
               }}
               subtitle={{
                 content: 'Layers on Layers',
-                size: '16',
+                size: '14',
                 weight: '300',
               }}
               type="horizontal"
@@ -123,7 +152,7 @@ const Newin = () => {
                 ...horizontalImageStyle,
                 left: 0,
                 backgroundPosition: '0px 0px',
-                borderRadius: '15px 0 0 15px',
+                borderRadius: '15px 30px 0 15px',
                 backgroundImage: "url('/yellow-jacket.png')",
               }}
             />
