@@ -9,6 +9,9 @@
   }
 
   .card-detail {
+    position: absolute;
+    top: calc(100% - 14rem);
+    left: 5px;
     .title {
       font-size: 16px;
       font-weight: 600;
