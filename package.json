@@ -21,6 +21,7 @@
     "graphql": "^15.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "jwt-decode": "^2.2.0",
+    "mongodb": "^3.6.2",
     "next": "^9.4.4",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
