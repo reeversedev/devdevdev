@@ -27,13 +27,14 @@
 
     .sticky-toolbar {
       position: fixed;
-      width: calc(100% - 20%);
+      width: calc(100vw - 21.5%);
       background: #fff;
       z-index: 3;
       top: 4.5rem;
       left: 16.5rem;
       height: 100px;
       box-sizing: border-box;
+      margin-right: 20px;
     }
 
     .highlights {
@@ -69,12 +70,6 @@
   }
 }
 
-@media (min-width: 1025px) and (max-width: 2160px) {
-  .toolbar {
-    transform: translate(-12%);
-  }
-}
-
 @media (min-width: 769px) and (max-width: 1024px) {
   .homepage {
     h1 {
@@ -88,7 +83,7 @@
     }
   }
   .toolbar {
-    transform: translate(-20%);
+    margin-right: 30px;
   }
 }
 
