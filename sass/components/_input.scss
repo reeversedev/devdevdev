@@ -47,11 +47,12 @@ label.search-bar::before {
   + .tgl-btn {
     outline: 0;
     display: block;
-    width: 10em;
-    height: 2em;
+    width: 12em;
+    height: 2.8em;
     position: relative;
     cursor: pointer;
     user-select: none;
+    border: 1px solid #f0f0f0;
 
     &:after,
     &:before {
@@ -67,6 +68,12 @@ label.search-bar::before {
       top: 0;
       left: 0;
     }
+    span {
+      margin: 10px;
+      z-index: 1;
+      font-size: 14px;
+      font-weight: 700;
+    }
     #female {
       position: absolute;
       top: 0;
@@ -74,7 +81,7 @@ label.search-bar::before {
     #male {
       position: absolute;
       top: 0;
-      right: 0;
+      right: 1rem;
     }
   }
 
@@ -86,20 +93,16 @@ label.search-bar::before {
 // themes
 .tgl-light {
   + .tgl-btn {
-    background: #f0f0f0;
+    background: #fff;
     border-radius: 5px;
     padding: 2px;
     transition: all 0.4s ease;
     &:after {
       border-radius: 5px;
-      background: #fff;
+      background: #f0f0f0;
       opacity: 4.5;
       transition: all 0.2s ease;
     }
-  }
-
-  &:checked + .tgl-btn {
-    background: #9fd6ae;
   }
 }
 

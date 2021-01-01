@@ -15,7 +15,7 @@ const horizontalImageStyle = {
 const Newin = () => {
   return (
     <div className="d-flex flex-md-column flex-sm-column highlights">
-      <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0">
+      <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0 pl-0">
         <section className="vertical-section">
           <BannerCard
             title={{
@@ -93,7 +93,7 @@ const Newin = () => {
         </section>
       </div>
 
-      <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0">
+      <div className="w-50 w-md-100 w-sm-100 px-1 p-sm-0 pr-0">
         <div className="d-flex flex-column flex-sm-column">
           <section className="horizontal-section">
             <BannerCard

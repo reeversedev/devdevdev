@@ -69,6 +69,12 @@
   }
 }
 
+@media (min-width: 1025px) and (max-width: 2160px) {
+  .toolbar {
+    transform: translate(-12%);
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .homepage {
     h1 {
@@ -81,9 +87,8 @@
       }
     }
   }
-
   .toolbar {
-    transform: translateY(5px);
+    transform: translate(-20%);
   }
 }
 

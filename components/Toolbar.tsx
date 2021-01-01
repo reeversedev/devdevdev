@@ -13,8 +13,18 @@ const GenderToggleButton = () => {
         onChange={() => setGender(!gender)}
       />
       <label htmlFor="gender-toggle" className="tgl-btn">
-        <span id="female">Female</span>
-        <span id="male">Male</span>
+        <span
+          id="female"
+          className="d-flex align-items-center justify-content-center"
+        >
+          <img src="/women.svg" alt="women" width="18" /> Women
+        </span>
+        <span
+          id="male"
+          className="d-flex align-items-center justify-content-end"
+        >
+          <img src="/men.svg" alt="men" width="18" /> Men
+        </span>
       </label>
     </>
   )
