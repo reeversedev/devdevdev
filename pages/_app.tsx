@@ -4,6 +4,8 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import Layout from '../components/Layout'
 import { withApollo } from '../lib/withApollo'
 
+import 'tailwindcss/tailwind.css'
+
 type UserContextType = {
   cart: {
     displayCart: Boolean
