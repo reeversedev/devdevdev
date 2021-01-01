@@ -9,10 +9,10 @@ const GenderToggleButton = () => {
         type="checkbox"
         name="gender-toggle"
         id="gender-toggle"
-        className="tgl tgl-light"
+        className="toggle-container toggle-container-light"
         onChange={() => setGender(!gender)}
       />
-      <label htmlFor="gender-toggle" className="tgl-btn">
+      <label htmlFor="gender-toggle" className="toggle-button">
         <span
           id="female"
           className="d-flex align-items-center justify-content-center"

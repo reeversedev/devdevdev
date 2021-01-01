@@ -25,9 +25,9 @@ label.search-bar::before {
   background-image: url('https://commons.wikimedia.org/wiki/File:Search_Icon.svg');
 }
 
-// tgl
+// toggle-container
 
-.tgl {
+.toggle-container {
   display: none;
 
   // add default box-sizing for this scope
@@ -37,14 +37,14 @@ label.search-bar::before {
   & *,
   & *:after,
   & *:before,
-  & + .tgl-btn {
+  & + .toggle-button {
     box-sizing: border-box;
     &::selection {
       background: none;
     }
   }
 
-  + .tgl-btn {
+  + .toggle-button {
     outline: 0;
     display: block;
     width: 12em;
@@ -85,14 +85,14 @@ label.search-bar::before {
     }
   }
 
-  &:checked + .tgl-btn:after {
+  &:checked + .toggle-button:after {
     left: 50%;
   }
 }
 
 // themes
-.tgl-light {
-  + .tgl-btn {
+.toggle-container-light {
+  + .toggle-button {
     background: #fff;
     border-radius: 5px;
     padding: 2px;
