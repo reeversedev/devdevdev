@@ -25,6 +25,87 @@ label.search-bar::before {
   background-image: url('https://commons.wikimedia.org/wiki/File:Search_Icon.svg');
 }
 
+// toggle-container
+
+.toggle-container {
+  display: none;
+
+  // add default box-sizing for this scope
+  &,
+  &:after,
+  &:before,
+  & *,
+  & *:after,
+  & *:before,
+  & + .toggle-button {
+    box-sizing: border-box;
+    &::selection {
+      background: none;
+    }
+  }
+
+  + .toggle-button {
+    outline: 0;
+    display: block;
+    width: 12em;
+    height: 2.8em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #f0f0f0;
+
+    &:after,
+    &:before {
+      position: relative;
+      display: block;
+      width: 50%;
+      height: 100%;
+      content: '';
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    span {
+      margin: 10px;
+      z-index: 1;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    #female {
+      position: absolute;
+      top: 0;
+    }
+    #male {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+    }
+  }
+
+  &:checked + .toggle-button:after {
+    left: 50%;
+  }
+}
+
+// themes
+.toggle-container-light {
+  + .toggle-button {
+    background: #fff;
+    border-radius: 5px;
+    padding: 2px;
+    transition: all 0.4s ease;
+    &:after {
+      border-radius: 5px;
+      background: #f0f0f0;
+      opacity: 4.5;
+      transition: all 0.2s ease;
+    }
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1024px) {
   label.search-bar {
     input {
