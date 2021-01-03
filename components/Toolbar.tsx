@@ -12,12 +12,7 @@ const GenderToggleButton = () => {
         className="toggle-container toggle-container-light"
         onChange={() => setGender(!gender)}
       />
-      <label
-        htmlFor="gender-toggle"
-        className={`toggle-button ${
-          gender ? 'pg-purple-after' : 'pg-pink-after'
-        }`}
-      >
+      <label htmlFor="gender-toggle" className="toggle-button">
         <span
           id="female"
           className="d-flex align-items-center justify-content-center"
