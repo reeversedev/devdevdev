@@ -10,9 +10,10 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "./logo.svg",
+      "src": "/logo.png",
       "sizes": "512x512",
-      "type": "image/svg"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
