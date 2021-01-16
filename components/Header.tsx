@@ -37,6 +37,11 @@ const Header: React.FC<User> = (profile) => {
     <div className="d-flex justify-content-between align-items-center header">
       <Head>
         <title>dev dev dev</title>
+        <link rel="manifest" href="/manifest.json"/>
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="apple-touch-startup-icon" href="/logo.png" />
+        <meta name ="apple-mobile-web-app-capable" content="yes" />
+        <meta name ="apple-mobile-web-app-title" content="dev dev dev" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className="logo">

@@ -1,4 +1,4 @@
-import { useReducer, createContext } from 'react'
+import {useReducer, createContext, useEffect} from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
 
 import Layout from '../components/Layout'
@@ -35,7 +35,17 @@ function reducer(state = initialState, action) {
   }
 }
 
-function MyApp({ Component, pageProps, apolloClient }) {
+function MyApp({Component, pageProps, apolloClient}) {
+  useEffect(() => {
+    if("serviceWorker" in navigator){
+      window.addEventListener("load", function(){
+        navigator.serviceWorker
+            .register("/sw.js")
+            .catch(()=>{console.log("Service Worker Failed to Register :(")})
+      })
+    }
+  }, []);
+
   const [cart, setCart] = useReducer(reducer, initialState)
   return (
     <ApolloProvider client={apolloClient}>
